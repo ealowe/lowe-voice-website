@@ -84,7 +84,8 @@ font-size: 14px; color: black;
 }
 
 .bio p {
-margin-top: 18px;
+margin: 18px 0;
+padding-right: 30px;
 }
 
 .woo-sc-divider {
@@ -109,12 +110,14 @@ font-weight: normal;
 }
 
 .demos {
-padding: 0 1em 0 0;
+margin: 1em 0;
+}
+.demos h3 {
 }
 .demos h4 {
 font-weight: bold;
 font-size: 12px;
-margin: 8px 0 0 0;
+margin: 0 0 -2px 0;
 }
 .demos audio {
 max-width: 84%;
@@ -123,24 +126,62 @@ max-width: 84%;
 vertical-align: top;
 }
 
-.about {
+.agent-list {
+margin: 1em 0;
+}
+.agent-list h3 {
+}
+.agent {
+display: inline-block;
+margin: 0 0 1em 0;
+}
+.agent img {
+width: 100px;
+height: 100px;
+}
+.agent table {
+margin: 4px 0 0 0;
+background: #f8f8f8; /* match white-box */
+}
+.agent p {
+margin: 0;
+background: #f8f8f8; /* match white-box */
+font-size: 16px;
+}
+.agent p.agency-name {
+font-size: 19px;
+font-weight: bold;
+}
+.agent table td {
+padding: 0 1em 0 0;
+border: 0 hidden;
+}
+.agent a {
+color: #0B588F;
+}
+
+.bio {
+margin: 0 8px 0 4px;
+}
+.bio p {
+font-size: 16px;
 }
 
 .contact {
-margin: 0.6em 0;
-padding: 0.6em 0;
-border-top: 1px solid #aaa;
+margin: 1em 0;
 }
 .contact p {
-margin: 2px 0;
+margin: 4px 0;
+font-size: 18px;
 font-weight: bold;
 }
-.contact .icon-list {
-margin: 12px 0 0 0;
+.contact .icon-list img {
+margin: 18px 0 0 0;
 }
 
 .contact img {
-width: 18px;
+width: 24px;
+margin-right: 8px;
 background: #f8f8f8; /* match white-box */
 }
 
@@ -166,35 +207,6 @@ height: 200px;
 }
 .credit p {
 text-align: right;
-}
-
-.agent {
-display: inline-block;
-margin: 0 1em 0 0;
-}
-.agent img {
-max-width: 90px;
-max-height: 70px;
-}
-.agent table {
-margin: 4px 0 0 0;
-background: #f8f8f8; /* match white-box */
-}
-.agent p {
-margin: 0 16px -1px 0;
-background: #f8f8f8; /* match white-box */
-font-size: 13px;
-}
-.agent p.agency-name {
-font-size: 14px;
-font-weight: bold;
-}
-.agent table td {
-padding: 0 1em 0 0;
-border: 0 hidden;
-}
-.agent a {
-color: #0B588F;
 }
 
 /* DESKTOP STYLES
