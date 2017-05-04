@@ -149,7 +149,7 @@ background: #f8f8f8; /* match white-box */
 font-size: 16px;
 }
 .agent p.agency-name {
-font-size: 19px;
+font-size: 18px;
 font-weight: bold;
 }
 .agent table td {
@@ -172,7 +172,7 @@ margin: 1em 0;
 }
 .contact p {
 margin: 4px 0;
-font-size: 18px;
+font-size: 16px;
 font-weight: bold;
 }
 .contact .icon-list img {
@@ -201,14 +201,22 @@ vertical-align: middle;
 background: #f8f8f8; /* match white-box */
 }
 
+.credit-list {
+margin: 12px 0;
+}
 .credit {
 display: inline-block;
 margin: 0 1em 0 0;
-width: 300px;
-height: 200px;
+width: 360px;
+height: 280px;
+}
+.credit iframe {
+width: 100%;
+height: 72%;
 }
 .credit p {
 text-align: right;
+font-size: 16px;
 }
 
 /* DESKTOP STYLES
