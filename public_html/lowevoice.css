@@ -190,14 +190,14 @@ background: #f8f8f8; /* match white-box */
 
 .client {
 display: inline-block;
-width: 62px;
-height: 44px;
-margin: 0 2px;
+width: 56px;
+height: 40px;
+margin: -2px 2px;
 }
 .client img {
 max-height: 100%;
 max-width: 100%;
-width: 98%;
+width: 96%;
 vertical-align: middle;
 background: #f8f8f8; /* match white-box */
 }
