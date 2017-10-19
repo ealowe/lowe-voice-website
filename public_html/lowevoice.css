@@ -61,14 +61,13 @@ font-size: 36px; color: #0B588F;
 
 .tagline {
 text-align: center;
+font-size: 18px;
 -webkit-text-fill-color: white;
 -webkit-text-stroke-width: 1px;
 -webkit-text-stroke-color: black;
-transform: scale(1.2, .8);
-font-size: 16px;
-text-shadow: 1px 1px black;
-letter-spacing: 4px;
-margin: 8px 0 0 0;
+transform: scale(1.2, 1);
+letter-spacing: 3px;
+margin: 6px 0 0 0;
 }
 
 body {
@@ -261,6 +260,9 @@ font-size: 34px;
 .header h2 {
 font-size: 28px;
 }
+.tagline {
+font-size: 12px;
+}
 
 }
 
@@ -290,6 +292,10 @@ font-size: 30px !important;
 }
 .header h2 {
 font-size: 24px !important;
+}
+.tagline {
+font-size: 10px !important;
+letter-spacing: 2px;
 }
 .client {
 width: 54px;
