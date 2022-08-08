@@ -19,6 +19,29 @@
 <link rel="stylesheet" type="text/css" href="assets/css/woo-codes.css" />
 <link rel="stylesheet" type="text/css" href="lowevoice.css" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  function setColor(elt, color) {
+    $(elt).css("color", `#${color.toString(16)}`);
+  }
+  async function fadeIn(elt) {
+    let ms = 80;
+    let decrement = 0x040404;
+    for (color = 0xFFFFFF; color > 0; color -= decrement) {
+      setColor(elt, color);
+      await delay(ms);
+    }
+    setColor(elt, '0');
+  }
+  $(document).ready(() => {
+    let elt = $('#tagline');
+    fadeIn(elt);
+  });
+</script>
+
 </head>
 
 <body class="home page page-id-100 page-template-default unknown alt-style-default one-col width-960 one-col-960">
@@ -27,9 +50,9 @@
 <div id="inner-wrapper">
 
 <header class="header white-box" style="text-align:center">
-  <h1>ELLIOTT&nbsp;LOWE</h1>
-  <h2>VOICE&nbsp;TALENT</h2>
-  <h3>Voiceover that Cuts Through</h3>
+  <h1>ELLIOTT LOWE</h1>
+  <h2>VOICE TALENT</h2>
+  <h3 id="tagline">CUT&nbsp;&nbsp;THROUGH</h3>
 </header>
        
 <section class="entry white-box">
@@ -266,11 +289,8 @@
     <div class="bio">
       <p>
         Elliott's voice has been heard thousands of times on TV, the radio,
-        and digital media around the world.  Want to cut through with a voiceover that's
-        powerful and intense?  Easygoing and friendly?  Major attitude?  How about a combination?
-        Well, companies like Microsoft, Draft Kings, Zulily, and Dickies trust Elliott with their brands.
-        Plus, he's the voice of Positiv TV.
-        Now find out what he can do for your project.  Listen for yourself!
+        and digital media around the world.
+        Now find out what he can do for your project!
       </p>
     </div>
 
