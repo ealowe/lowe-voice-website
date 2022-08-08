@@ -41,11 +41,10 @@ color: #0B588F;
 }
 .header h3 {
 margin: 12px;
-font-size: 42px;
-font-weight: normal;
--webkit-text-fill-color: white;
--webkit-text-stroke-width: 2px;
-transform: scale(1.6, 1);
+font-size: 28px;
+letter-spacing: 1px;
+font-weight: 100;
+transform: scale(1.4, 1);
 }
 
 #tagline {
