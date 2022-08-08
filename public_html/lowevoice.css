@@ -47,10 +47,6 @@ font-weight: 100;
 transform: scale(1.5, 1);
 }
 
-#tagline {
-color: white;
-}
-
 body {
 background-color: #082a5a;
 }
@@ -63,10 +59,6 @@ margin: 1em 2em;
 text-align: left;
 }
 
-.entry .hashtag p {
-font-weight: bold;
-}
-
 .entry h3 {
 font-size: 1.6em; color: #0B588F;
 margin: 0 0 4px 0;
@@ -77,7 +69,7 @@ font-size: 14px; color: black;
 
 .bio p {
 margin: 12px 0 24px 0;
-padding-right: 30px;
+text-align: justify;
 }
 
 .woo-sc-divider {
@@ -112,8 +104,8 @@ font-size: 13px;
 margin: 2px 0;
 }
 .demos audio {
-max-width: 84%;
-max-height: 18px;
+max-width: 96%;
+max-height: 20px;
 }
 .demos img {
 vertical-align: top;
@@ -121,7 +113,7 @@ height: 20px;
 }
 
 .demo {
-min-height: 48px;
+min-height: 50px;
 }
 
 .agency-list {
@@ -129,7 +121,7 @@ margin: 16px 0;
 }
 .agency-list p {
 font-family: "Helvetica Neue";
-font-size: 15px;
+font-size: 16px;
 }
 .agency {
 display: inline-block;
@@ -140,7 +132,7 @@ height: 36px;
 background: #FCFCFC; /* match white-box */
 }
 .agent {
-margin: 8px 0 0 0;
+margin: 12px 0 0 0;
 }
 .agent p {
 margin: -6px 4px;
@@ -160,9 +152,6 @@ margin: 0 8px 0 2px;
 font-size: 16px;
 }
 
-.contact {
-margin: 4px 0;
-}
 .contact p {
 margin: 0;
 font-size: 16px;
@@ -172,9 +161,9 @@ font-weight: bold;
 color: #0B588F;
 }
 .contact img {
-width: 24px;
-height: 24px;
-margin-right: 8px;
+width: 20px;
+height: 20px;
+margin: 0 8px 0 0;
 background: #FCFCFC; /* match white-box */
 }
 
@@ -247,20 +236,38 @@ width: 180px;
 letter-spacing: 0;
 }
 .header h1 {
-font-size: 30px !important;
+font-size: 36px !important;
 }
 .header h2 {
-font-size: 24px !important;
+font-size: 30px !important;
 }
 .header h3 {
-font-size: 12px !important;
+font-size: 18px !important;
+transform: scale(1.2, 1);
+}
+.demos {
+margin: 12px 2px;
 }
 .client {
 width: 54px;
 height: 36px;
 }
-.entry .hashtag p {
-font-size: 12px;
+.credit {
+display: contents;
+align: center;
+width: 100%;
+}
+.credit iframe {
+align: center;
+width: 300px;
+}
+.credit p {
+text-align: center;
+font-size: 16px;
+}
+.bio p {
+font-size: 15px;
+line-height: 1.2em;
 }
 
 }

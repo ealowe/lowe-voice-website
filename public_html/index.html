@@ -28,8 +28,9 @@
     $(elt).css("color", `#${color.toString(16)}`);
   }
   async function fadeIn(eltId) {
-    await delay(1000);
     let elt = $(`#${eltId}`);
+    setColor(elt, 0xFFFFFF);
+    await delay(1000);
     let ms = 40;
     let decrement = 0x040404;
     for (color = 0xFFFFFF; color > 0; color -= decrement) {
@@ -291,7 +292,7 @@
       <p>
         Elliott's voice has been heard thousands of times on TV, the radio,
         and digital media around the world.
-        Now find out what he can do for your project!
+        Find out what he can do for your project!
       </p>
     </div>
 
