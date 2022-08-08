@@ -28,7 +28,8 @@
     $(elt).css("color", `#${color.toString(16)}`);
   }
   async function fadeIn(elt) {
-    let ms = 60;
+    await delay(1000);
+    let ms = 40;
     let decrement = 0x040404;
     for (color = 0xFFFFFF; color > 0; color -= decrement) {
       setColor(elt, color);
