@@ -27,19 +27,19 @@
   function setColor(elt, color) {
     $(elt).css("color", `#${color.toString(16)}`);
   }
-  async function fadeIn(elt) {
+  async function fadeIn(eltId) {
     await delay(1000);
+    let elt = $(`#${eltId}`);
     let ms = 40;
     let decrement = 0x040404;
     for (color = 0xFFFFFF; color > 0; color -= decrement) {
       setColor(elt, color);
       await delay(ms);
     }
-    setColor(elt, '0');
+    setColor(elt, 0);
   }
   $(document).ready(() => {
-    let elt = $('#tagline');
-    fadeIn(elt);
+    fadeIn("tagline");
   });
 </script>
 
