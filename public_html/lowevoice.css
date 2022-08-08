@@ -12,7 +12,7 @@ font-family: 'Optima', 'Belleza', arial, sans-serif;
 }
 
 .white-box {
-background:#f8f8f8;
+background:#FCFCFC;
 border-radius: 6px;
 margin: 24px 60px;
 padding: 2px 0;
@@ -41,10 +41,10 @@ color: #0B588F;
 }
 .header h3 {
 margin: 12px;
-font-size: 28px;
+font-size: 24px;
 letter-spacing: 1px;
 font-weight: 100;
-transform: scale(1.4, 1);
+transform: scale(1.5, 1);
 }
 
 #tagline {
@@ -137,7 +137,7 @@ display: inline-block;
 .agency img {
 width: 100px;
 height: 36px;
-background: #f8f8f8; /* match white-box */
+background: #FCFCFC; /* match white-box */
 }
 .agent {
 margin: 8px 0 0 0;
@@ -175,7 +175,7 @@ color: #0B588F;
 width: 24px;
 height: 24px;
 margin-right: 8px;
-background: #f8f8f8; /* match white-box */
+background: #FCFCFC; /* match white-box */
 }
 
 .client {
@@ -189,7 +189,7 @@ max-height: 100%;
 max-width: 100%;
 width: 96%;
 vertical-align: middle;
-background: #f8f8f8; /* match white-box */
+background: #FCFCFC; /* match white-box */
 }
 
 .credit-list {
