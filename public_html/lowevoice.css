@@ -47,6 +47,10 @@ font-weight: 100;
 transform: scale(1.5, 1);
 }
 
+#tagline {
+color: white;
+}
+
 body {
 background-color: #082a5a;
 }
