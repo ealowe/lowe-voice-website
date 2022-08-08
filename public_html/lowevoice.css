@@ -253,8 +253,9 @@ transform: scale(1.2, 1);
 margin: 12px 2px;
 }
 .client {
-width: 54px;
-height: 36px;
+margin: 0;
+width: 30px;
+height: 20px;
 }
 .credit {
 display: contents;
