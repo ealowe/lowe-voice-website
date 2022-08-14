@@ -71,11 +71,6 @@ margin: 0 0 4px 0;
 font-size: 14px; color: black;
 }
 
-.bio p {
-margin: 12px 0 24px 0;
-text-align: justify;
-}
-
 .woo-sc-divider {
 margin-bottom: 8px;
 }
@@ -98,7 +93,7 @@ font-weight: normal;
 }
 
 .demos {
-margin: 1em 1em;
+margin: 1em;
 }
 .demos h3 {
 }
@@ -121,7 +116,7 @@ min-height: 50px;
 }
 
 .agency-list {
-margin: 16px 0;
+margin: 1em 0;
 }
 .agency-list p {
 font-family: "Helvetica Neue";
@@ -147,13 +142,6 @@ color: #0B588F;
 }
 .agent .specialty {
 font-weight: 600;
-}
-
-.bio {
-margin: 0 8px 0 2px;
-}
-.bio p {
-font-size: 16px;
 }
 
 .contact p {
@@ -270,10 +258,6 @@ width: 300px;
 .credit p {
 text-align: center;
 font-size: 16px;
-}
-.bio p {
-font-size: 15px;
-line-height: 1.2em;
 }
 
 }
