@@ -7,7 +7,7 @@
   src: url('assets/fonts/Belleza-Regular.ttf');
 }
 
-body, h1, h2, h3, p, .entry p, .footer p {
+body, h1, h2, h3, h4, p, .entry p, .footer p {
 font-family: 'Optima', 'Belleza', arial, sans-serif;
 }
 
@@ -93,18 +93,16 @@ font-weight: normal;
 }
 
 .demos {
-margin: 1em;
+margin: 8px;
 }
-.demos h3 {
-}
-.demos h4 {
+.demos h3, .demos h4 {
 font-weight: bold;
-font-size: 13px;
+font-size: 14px;
 margin: 2px 0;
 }
 .demos audio {
 max-width: 96%;
-max-height: 16px;
+max-height: 22px;
 }
 .demos img {
 vertical-align: top;
@@ -112,38 +110,48 @@ height: 20px;
 }
 
 .demo {
-min-height: 40px;
+min-height: 50px;
 }
 
 .agency-list {
-margin: 1em 0 1.6em;
-}
-.agency-list p {
-font-family: "Helvetica Neue";
-font-size: 16px;
+margin: 8px 4px 12px 0;
 }
 .agency {
 display: inline-block;
 }
+.agency p {
+}
 .agency img {
-width: 100px;
+width: 96px;
 height: 36px;
+padding: 0;
 background: #FCFCFC; /* match white-box */
 }
-.agent {
+.office p {
 margin: 12px 0 0 0;
+font-size: 18px;
+}
+.office p {
+font-weight: 700;
+}
+.agent {
+margin: 8px 0 0 0;
 }
 .agent p {
-margin: -6px 4px;
-font-weight: 400;
+margin: -6px 0;
+font-weight: 600;
 }
 .agent a {
 color: #0B588F;
+font-weight: 500;
 }
-.agent .specialty {
-font-weight: 600;
+.agent p, .agent a {
+font-size: 15px;
 }
 
+.contact {
+margin: 8px 4px;
+}
 .contact p {
 margin: 0;
 font-size: 16px;
