@@ -22,7 +22,13 @@
           background-color: #000;
           color: #e8e3cb;
           font-family: 'Typenoksidi', 'Special Elite', monospace;
-          scroll-padding-top: 80px; /* a little taller than sticky header */
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Vintage-Microphone-Digital.jpg');
+          background-size: cover;
+          background-position: 50% 25%;
+          background-attachment: fixed;
+          background-blend-mode: multiply;
+          background-color: rgba(0, 0, 0, 0.7); /* Darken it to maintain readability */
+          scroll-padding-top: 100px; /* a little taller than sticky header */
           scroll-behavior: smooth;
       }
 
@@ -122,12 +128,21 @@
           opacity: 0.75;
       }
 
+      /* Disable film effects by setting opacity to 0 */
+      .film-dust,
+      .film-scratches,
+      .film-overlay,
+      .vignette,
+      .projector-glow {
+          opacity: 0;
+      }
+
       .projector-container {
+          margin: 20px auto;
           position: relative;
           width: 100%;
           height: 180px;
           overflow: hidden;
-          box-shadow: 0 0 60px rgba(255, 245, 215, 0.1);
       }
       
       .screen {
@@ -138,12 +153,6 @@
           overflow: hidden;
           z-index: 0;
           animation: flicker 30s infinite;
-          background-color: #080808;
-          background-image:
-              linear-gradient(rgba(30, 30, 30, 0.05) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(30, 30, 30, 0.05) 1px, transparent 1px);
-          background-size: 2px 2px;
-          transition: transform 30ms ease-out; /* Short transition for jittery effect */
       }
       
       .projector-text-container {
@@ -157,7 +166,7 @@
       
       .projector-text-container.ghost {
           position: absolute;
-          mix-blend-mode: screen; /* Creates more interesting overlaps */
+          mix-blend-mode: screen;
       }
       
       .line1 {
@@ -305,34 +314,6 @@
     <style>
       .content-area {
           padding: 20px auto;
-      }
-
-      .section-with-background {
-          position: relative;
-          z-index: 1;
-      }
-
-      .section-with-background::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url('images/Vintage-Microphone-Digital.jpg');
-          background-size: 100% auto;
-          background-position: center;
-          opacity: 0.2;
-          z-index: -1;
-      }
-
-      /* Make sure the text is readable against the background */
-      .section-with-background .section-header,
-      .section-with-background p {
-          position: relative;
-          z-index: 2;
-          /* Optional: add text shadow for better readability */
-          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       }
 
       .main-section {
@@ -602,7 +583,7 @@
       <div class="projector-glow"></div>
     </div>
     
-    <div class="content-area section-with-background">
+    <div class="content-area">
 
       <section class="main-section demos" id="demos">
         <header class="section-header">
