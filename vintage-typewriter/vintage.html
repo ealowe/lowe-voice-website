@@ -33,7 +33,7 @@
       }
 
       .copyright p {
-          font-family: 'Special Elite', monospace; /* to get copyright symbol */
+          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi doesn't have one */
           text-align: center;
       }
 
@@ -128,15 +128,6 @@
           opacity: 0.75;
       }
 
-      /* Disable film effects by setting opacity to 0 */
-      .film-dust,
-      .film-scratches,
-      .film-overlay,
-      .vignette,
-      .projector-glow {
-          opacity: 0;
-      }
-
       .projector-container {
           margin: 20px auto;
           position: relative;
@@ -200,75 +191,6 @@
           white-space: nowrap;
       }
       
-      .film-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.05' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-          pointer-events: none;
-          z-index: 3;
-          animation: film-flutter 0.3s steps(3) infinite;
-      }
-      
-      .film-dust {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.2;
-          background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
-          pointer-events: none;
-          z-index: 2;
-      }
-      
-      .film-scratches {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, 
-                                      transparent 0%, 
-                                      transparent 49%, 
-                                      rgba(255,255,255,0.05) 49.5%, 
-                                      transparent 50%, 
-                                      transparent 99%, 
-                                      rgba(255,255,255,0.05) 99.5%);
-          background-size: 300% 100%;
-          opacity: 0;
-          z-index: 5;
-          pointer-events: none;
-          animation: scratch 10s linear infinite;
-      }
-      
-      .vignette {
-          pointer-events: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          box-shadow: 0 0 200px rgba(0,0,0,0.3) inset;
-          z-index: 4;
-          border-radius: 50% / 10%;
-      }
-      
-      .projector-glow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(ellipse at center, 
-                                      rgba(255, 245, 215, 0.05) 0%, 
-                                      rgba(255, 245, 215, 0) 70%);
-          pointer-events: none;
-          z-index: 1;
-      }
-      
       @keyframes flicker {
           0% { opacity: 1; }
           47% { opacity: 0.98; } 
@@ -317,8 +239,8 @@
       }
 
       .main-section {
-          max-width: 800px;
-          margin: 40px auto 20px auto;
+          max-width: 900px;
+          margin: 60px auto 40px auto;
       }
       
       .section-header {
@@ -327,6 +249,7 @@
 
       .section-header h2 {
           font-size: 28px;
+          line-height: 3em;
       }
       
       .main-section p {
@@ -381,7 +304,7 @@
 
     <!-- Video grid styling -->
     <style>
-      /* Right-to-left grid container */
+      /* Left-to-right grid container */
       .video-grid-container {
           display: flex;
           flex-wrap: wrap;
@@ -394,7 +317,7 @@
           transform: translateX(-50%); /* Added for centering */
           gap: 10px;
           padding: 0 10px;    /* Added padding on sides */
-          direction: rtl;
+          direction: ltr;
       }
 
       /* Optional - to make the section header match the full width */
@@ -576,11 +499,6 @@
           <div class="line2" id="line2">VOICE TALENT</div>
         </div>
       </div>
-      <div class="film-dust"></div>
-      <div class="film-scratches"></div>
-      <div class="film-overlay"></div>
-      <div class="vignette"></div>
-      <div class="projector-glow"></div>
     </div>
     
     <div class="content-area">
@@ -643,12 +561,12 @@
             <iframe src="https://player.vimeo.com/video/399052483?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="video-grid-item">
-            <!-- Draft Kings -->
-            <iframe src="https://player.vimeo.com/video/211535459?rel=0" frameborder="0" allowfullscreen></iframe>
-          </div>
-          <div class="video-grid-item">
             <!-- Fendt 900 -->
             <iframe src="https://player.vimeo.com/video/521639501?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-grid-item">
+            <!-- Draft Kings -->
+            <iframe src="https://player.vimeo.com/video/211535459?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="video-grid-item">
             <!-- Wearwell -->
@@ -657,6 +575,18 @@
           <div class="video-grid-item">
             <!-- Amnesty Intl -->
             <iframe src="https://player.vimeo.com/video/211430070?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-grid-item">
+            <!-- Microsoft Lumia -->
+            <iframe src="https://player.vimeo.com/video/211550550?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-grid-item">
+            <!-- Boise Cascade -->
+            <iframe src="https://www.youtube.com/embed/htXwwYkKyD4?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-grid-item">
+            <!-- PIIMS -->
+            <iframe src="https://www.youtube.com/embed/jQpT7yI7A0g?rel=0" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
       </section>
