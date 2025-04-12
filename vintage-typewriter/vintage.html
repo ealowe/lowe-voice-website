@@ -8,6 +8,7 @@
     <link rel="icon" href="favicons/favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
 
+    <!-- Top level styling -->
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
@@ -33,9 +34,13 @@
           background-position: 50% 25%;
           background-attachment: fixed;
           background-blend-mode: multiply;
-          background-color: rgba(0, 0, 0, 0.7); /* Darken it to maintain readability */
+          background-color: rgba(0, 0, 0, 0.7);
           scroll-padding-top: 100px; /* a little taller than sticky header */
           scroll-behavior: smooth;
+      }
+
+      .footer {
+          margin-top: 40px;
       }
 
       .copyright p {
@@ -353,6 +358,7 @@
     <style>
       /* Left-to-right grid container */
       .video-grid-container {
+          margin: 8px;
           display: flex;
           flex-wrap: wrap;
           width: 98vw;
@@ -360,7 +366,7 @@
           left: 50%;
           right: 50%;
           transform: translateX(-50%);
-          gap: 10px;
+          gap: 8px;
           direction: ltr;
       }
 
@@ -931,11 +937,9 @@
               return 11;
           };
 
-
-          const updateActiveItem = () => {
+          const updateActiveItem = (itemIdx) => {
               const carouselItems = document.querySelectorAll('.carousel-item');
-              const middleVisibleIdx = Math.floor(getVisibleItemCount() / 2);
-              const newActiveItem = carouselItems[middleVisibleIdx];
+              const newActiveItem = carouselItems[itemIdx];
               carouselItems.forEach(item => item.classList.remove('active'));
               newActiveItem.classList.add('active');
               return newActiveItem;
@@ -948,40 +952,24 @@
 
               isTransitioning = true;
 
-              // Get the first item's width
-              const firstItem = carousel.firstElementChild;
-              const itemWidth = parseFloat(firstItem.style.width);
-
-              // 1. Update the active class to the NEXT item that will become centered
+              // Advance active item
               const carouselItems = document.querySelectorAll('.carousel-item');
               const middleVisibleIdx = Math.floor(getVisibleItemCount() / 2);
+              const newActiveItemIdx = (middleVisibleIdx + 1) % carouselItems.length;
+              updateActiveItem(newActiveItemIdx);
 
-              // Remove active class from current active item
-              carouselItems.forEach(item => item.classList.remove('active'));
-
-              // Add active class to the item that will become centered after the transition
-              // This is one position to the right of the current center
-              const newActiveItemIndex = (middleVisibleIdx + 1) % carouselItems.length;
-              carouselItems[newActiveItemIndex].classList.add('active');
-
-              // 2. Apply the transition to slide left
+              //  Apply the transition to slide left
+              const itemWidth = parseFloat(carousel.firstElementChild.style.width);
               carousel.style.transition = 'transform 0.5s ease';
               carousel.style.transform = `translateX(-${itemWidth}px)`;
 
-              // 3. After transition completes, move the first item to end and reset
+              // After transition completes, move the first item to end and reset
               const handleTransitionEnd = () => {
+                  // Suppress screen update while moving item
                   carousel.removeEventListener('transitionend', handleTransitionEnd);
-
+                  carousel.style.transform = 'translateX(0)';
                   carousel.style.transition = 'none';
                   carousel.appendChild(carousel.firstElementChild);
-                  carousel.style.transform = 'translateX(0)';
-
-                  // No need to update active item here, already done at the start
-
-                  setTimeout(() => {
-                      carousel.style.transition = 'transform 0.5s ease';
-                      isTransitioning = false;
-                  }, 10);
               };
 
               carousel.addEventListener('transitionend', handleTransitionEnd);
@@ -994,7 +982,8 @@
               carouselItems.forEach(item => {
                   item.style.width = `${itemWidth}px`;
               });
-              updateActiveItem();
+              const activeIdx = getVisibleItemCount() / 2;
+              updateActiveItem(Math.floor(activeIdx));
           }
 
           // Listen for transition end
