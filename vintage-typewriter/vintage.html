@@ -306,6 +306,13 @@
 
     <!-- Style the demo section -->
     <style>
+      .demo-grid-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
       .demo-grid {
           display: grid;
           grid-auto-rows: 1.6em;
@@ -315,7 +322,7 @@
           transform: scale(0.95);
           transform-origin: top center;
           margin: auto;
-          width: fit-content; /* This makes the grid only as wide as its content */
+          width: fit-content;
       }
 
       .demo-grid label {
@@ -333,8 +340,10 @@
 
       @media (max-width: 768px) {
           .demo-grid {
-              grid-template-columns: min-content 280px;
-              transform: scale(0.70);
+              grid-template-columns: min-content 320px;
+              transform: scale(0.80);
+              gap: 8px;
+              margin: 0;
           }
       }
 
@@ -471,41 +480,43 @@
         <h2>Listen to Demos</h2>
       </header>
 
-      <div class="demo-grid">
-        <label>Commercials</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Commercials.mp3" type="audio/mp3">
-        </audio>
+      <div class="demo-grid-container">
+        <div class="demo-grid">
+          <label>Commercials</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Commercials.mp3" type="audio/mp3">
+          </audio>
 
-        <label>In-Show Narration</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-InShow.mp3" type="audio/mp3">
-        </audio>
+          <label>In-Show Narration</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-InShow.mp3" type="audio/mp3">
+          </audio>
 
-        <label>Political</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Political.mp3" type="audio/mp3">
-        </audio>
+          <label>Political</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Political.mp3" type="audio/mp3">
+          </audio>
 
-        <label>Trailers</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Trailers.mp3" type="audio/mp3">
-        </audio>
+          <label>Trailers</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Trailers.mp3" type="audio/mp3">
+          </audio>
 
-        <label>Promos</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Promos.mp3" type="audio/mp3">
-        </audio>
+          <label>Promos</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Promos.mp3" type="audio/mp3">
+          </audio>
 
-        <label>Sports</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Sports.mp3" type="audio/mp3">
-        </audio>
+          <label>Sports</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Sports.mp3" type="audio/mp3">
+          </audio>
 
-        <label>Corporate/Industrial</label>
-        <audio class="demo-audio" controls>
-          <source src="https://lowevoice.com/demos/ElliottLowe-Corporate.mp3" type="audio/mp3">
-        </audio>
+          <label>Corporate/Industrial</label>
+          <audio class="demo-audio" controls>
+            <source src="https://lowevoice.com/demos/ElliottLowe-Corporate.mp3" type="audio/mp3">
+          </audio>
+        </div>
       </div>
     </section>
 
