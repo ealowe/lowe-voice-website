@@ -307,15 +307,12 @@
       .video-grid-container {
           display: flex;
           flex-wrap: wrap;
-          width: 90vw;
-          margin-left: calc(-50vw + 50%);  /* Added to center the grid */
-          margin-right: calc(-50vw + 50%); /* Added to center the grid */
-          position: relative; /* Added for positioning context */
-          left: 50%;          /* Added for centering */
-          right: 50%;         /* Added for centering */
-          transform: translateX(-50%); /* Added for centering */
+          width: 98vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          transform: translateX(-50%);
           gap: 10px;
-          padding: 0 10px;    /* Added padding on sides */
           direction: ltr;
       }
 
@@ -329,8 +326,8 @@
 
       /* Grid items */
       .video-grid-item {
-          flex: 1 0 calc(33.33% - 7px);
-          max-width: calc(33.33% - 7px);
+          flex: 1 0 calc(25% - 10px);
+          max-width: calc(25% - 10px);
           aspect-ratio: 16 / 9;
           overflow: hidden;
           position: relative;
@@ -346,7 +343,14 @@
           border: 0;
       }
 
-      @media (max-width: 1200px) {
+      @media (max-width: 1400px) {
+          .video-grid-item {
+              flex: 1 0 calc(33.3333% - 7px);
+              max-width: calc(33.3333% - 7px);
+          }
+      }
+
+      @media (max-width: 1000px) {
           .video-grid-item {
               flex: 1 0 calc(50% - 5px);
               max-width: calc(50% - 5px);
@@ -530,6 +534,18 @@
         <div class="video-grid-item">
           <!-- PIIMS -->
           <iframe src="https://www.youtube.com/embed/jQpT7yI7A0g?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-grid-item">
+          <!-- Soothe -->
+          <iframe src="https://player.vimeo.com/video/238151970?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-grid-item">
+          <!-- Dixie Chopper -->
+          <iframe src="https://www.youtube.com/embed/ejVOI00p_VE?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-grid-item">
+          <!-- ScanMed -->
+          <iframe src="https://www.youtube.com/embed/7w_BLZqai7g?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -976,7 +992,8 @@
           const getVisibleItems = () => {
               const windowWidth = window.innerWidth;
               if (windowWidth < 768) return 4;
-              if (windowWidth < 1200) return 6;
+              if (windowWidth < 1000) return 6;
+              if (windowWidth < 1400) return 9;
               return allVideoItems.length;
           };
 
