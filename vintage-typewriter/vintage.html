@@ -47,7 +47,6 @@
           position: sticky;
           top: 0;
           background-color: #141414;
-          height: 70px;
           width: 100%;
           z-index: 1000;
           display: flex;
@@ -63,8 +62,8 @@
           display: grid;
           grid-template-columns: 1fr auto 1fr; /* Three-column layout: left, middle, right */
           align-items: center;
-          padding: 0 20px;
-          font-size: 18px;
+          padding: 20px;
+          font-size: 16px;
       }
       .header-left, .header-middle, .header-right {
           display: flex;
@@ -83,6 +82,20 @@
           flex-direction: column;
           align-items: flex-end;
           gap: 8px;
+      }
+
+      @media (max-width: 1000px) {
+          .header-container {
+              grid-template-columns: 1fr;
+              padding: 20px 20px;
+          }
+          .header-left, .header-right {
+              display: none;
+          }
+          .header-middle {
+              width: 100%;
+              justify-content: center;
+          }
       }
 
       .menu a {
@@ -200,6 +213,18 @@
           white-space: nowrap;
       }
 
+      @media (max-width: 768px) {
+          .projector-container {
+              height: 100px;
+          }
+          .line1 {
+              font-size: 54px;
+          }
+          .line2 {
+              font-size: 36px;
+          }
+      }
+
       @keyframes flicker {
           0% { opacity: 1; }
           47% { opacity: 0.98; }
@@ -244,22 +269,23 @@
     <!-- Style the main sections -->
     <style>
       .main-section {
-          max-width: 90%;
-          margin: 60px auto;
+          margin: 60px auto 20px auto;
       }
 
       .section-header {
           text-align: center;
-      }
-
-      .section-header h2 {
-          font-size: 28px;
-          line-height: 2em;
+          font-size: 20px;
       }
 
       .main-section p {
           font-size: 18px;
           line-height: 1.6em;
+      }
+
+      @media (max-width: 768px) {
+          .section-header {
+              font-size: 16px;
+          }
       }
 
       .about .content-container {
@@ -275,6 +301,7 @@
       .about .content-container .text-content {
           flex: 1; /* Take up remaining space */
       }
+
     </style>
 
     <!-- Style the demo section -->
@@ -287,8 +314,7 @@
           align-items: center;
           transform: scale(0.95);
           transform-origin: top center;
-          margin-left: auto;
-          margin-right: auto;
+          margin: auto;
           width: fit-content; /* This makes the grid only as wide as its content */
       }
 
@@ -303,6 +329,13 @@
           background: inherit;
           --plyr-color-main: gray;
           --plyr-audio-control-color: gray;
+      }
+
+      @media (max-width: 768px) {
+          .demo-grid {
+              grid-template-columns: min-content 280px;
+              transform: scale(0.70);
+          }
       }
 
     </style>
@@ -1020,12 +1053,6 @@
               }
           };
 
-/*
-          .video-grid-item {
-              flex: 1 0 100%;
-              max-width: 100%;
-          }
-*/
           // Function to show/hide videos based on screen width
           const adjustVideoDisplay = () => {
               const styling = getGalleryStyling();
