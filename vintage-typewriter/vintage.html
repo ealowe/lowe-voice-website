@@ -955,13 +955,11 @@
 
           // Auto-rotate carousel
           setInterval( () => {
-              console.log("advancing carousel...");
               advanceCarousel();
           }, 2000);
 
           // Update on resize
           window.addEventListener('resize', () => {
-              console.log("resizing carousel...");
               resizeCarousel();
           });
 
