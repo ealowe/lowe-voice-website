@@ -18,6 +18,12 @@
           font-style: normal;
       }
 
+      :root {
+          --window-width-narrow: 768;
+          --window-width-medium: 1000;
+          --window-width-wide: 1500;
+      }
+
       html {
           background-color: #000;
           color: #e8e3cb;
@@ -58,10 +64,10 @@
           grid-template-columns: 1fr auto 1fr; /* Three-column layout: left, middle, right */
           align-items: center;
           padding: 0 20px;
+          font-size: 18px;
       }
       .header-left, .header-middle, .header-right {
           display: flex;
-          font-size: 18px;
       }
       .header-left {
           flex-direction: column;
@@ -316,7 +322,7 @@
           direction: ltr;
       }
 
-      /* Optional - to make the section header match the full width */
+      /* Make the section header match the full width */
       .video-gallery {
           width: 100%;
           max-width: 100%;
@@ -326,8 +332,8 @@
 
       /* Grid items */
       .video-grid-item {
-          flex: 1 0 calc(25% - 10px);
-          max-width: calc(25% - 10px);
+          flex: 1 0 calc(25% - 10px);   /* default, will be updated on load and resize */
+          max-width: calc(25% - 10px);  /* ditto */
           aspect-ratio: 16 / 9;
           overflow: hidden;
           position: relative;
@@ -336,32 +342,9 @@
       /* iframes inside grid items */
       .video-grid-item iframe {
           position: absolute;
-          top: 0;
-          left: 0;
           width: 100%;
           height: 100%;
           border: 0;
-      }
-
-      @media (max-width: 1400px) {
-          .video-grid-item {
-              flex: 1 0 calc(33.3333% - 7px);
-              max-width: calc(33.3333% - 7px);
-          }
-      }
-
-      @media (max-width: 1000px) {
-          .video-grid-item {
-              flex: 1 0 calc(50% - 5px);
-              max-width: calc(50% - 5px);
-          }
-      }
-
-      @media (max-width: 768px) {
-          .video-grid-item {
-              flex: 1 0 100%;
-              max-width: 100%;
-          }
       }
     </style>
 
@@ -890,11 +873,17 @@
           const container = document.querySelector('.carousel-container');
           const carousel = document.querySelector('.carousel-track');
 
+          const rootStyle = getComputedStyle(document.documentElement);
+          const NARROW = rootStyle.getPropertyValue('--window-width-narrow');
+          const MEDIUM = rootStyle.getPropertyValue('--window-width-medium');
+          const WIDEST = rootStyle.getPropertyValue('--window-width-wide');
+
           let isTransitioning = false;
 
           const getVisibleItemCount = () => {
-              if (window.innerWidth <= 768) return 5;
-              if (window.innerWidth <= 1200) return 9;
+              if (window.innerWidth <= NARROW) return 5;
+              if (window.innerWidth <= MEDIUM) return 7;
+              if (window.innerWidth <= WIDEST) return 9;
               return 11;
           };
 
@@ -989,18 +978,66 @@
       document.addEventListener('DOMContentLoaded', function() {
           const allVideoItems = document.querySelectorAll('.video-grid-item');
 
+          const rootStyle = getComputedStyle(document.documentElement);
+          const NARROW = rootStyle.getPropertyValue('--window-width-narrow');
+          const MEDIUM = rootStyle.getPropertyValue('--window-width-medium');
+          const WIDE = rootStyle.getPropertyValue('--window-width-wide');
+
           const getVisibleItems = () => {
               const windowWidth = window.innerWidth;
-              if (windowWidth < 768) return 4;
-              if (windowWidth < 1000) return 6;
-              if (windowWidth < 1400) return 9;
+              if (windowWidth < NARROW) return 4;
+              if (windowWidth < MEDIUM) return 6;
+              if (windowWidth < WIDE) return 9;
               return allVideoItems.length;
           };
 
+          const getGalleryStyling = () => {
+              const windowWidth = window.innerWidth;
+              if (windowWidth < NARROW) {
+                  return {
+                      visibleItems: 4,
+                      itemWidthPct: 100,
+                      gap: 5,
+                  };
+              } else if (windowWidth < MEDIUM) {
+                  return {
+                      visibleItems: 8,
+                      itemWidthPct: 50,
+                      gap: 10,
+                  };
+              } else if (windowWidth < WIDE) {
+                  return {
+                      visibleItems: allVideoItems.length,
+                      itemWidthPct: 33.3333333,
+                      gap: 10,
+                  };
+              } else {
+                  return {
+                      visibleItems: allVideoItems.length,
+                      itemWidthPct: 25,
+                      gap: 10,
+                  };
+              }
+          };
+
+/*
+          .video-grid-item {
+              flex: 1 0 100%;
+              max-width: 100%;
+          }
+*/
           // Function to show/hide videos based on screen width
           const adjustVideoDisplay = () => {
-              allVideoItems.forEach((item, index) => {
-                  item.style.display = index < getVisibleItems() ? 'block' : 'none';
+              const styling = getGalleryStyling();
+              const visibleItems = styling.visibleItems;
+              const grow = 1;
+              const shrink = 0;
+              const adjustedWidth = `calc(${styling.itemWidthPct}% - ${styling.gap}px)`
+
+              allVideoItems.forEach((gridItem, i) => {
+                  gridItem.style.display = i < styling.visibleItems ? 'block' : 'none';
+                  gridItem.style.flex = `${grow} ${shrink} ${adjustedWidth}`;
+                  gridItem.style.maxWidth = `${adjustedWidth}`;
               });
           };
 
