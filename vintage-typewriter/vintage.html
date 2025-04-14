@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elliott Lowe Voice Talent - Professional Voiceover For Your Next Project</title>
 
-    <link rel="icon" href="favicons/favicon.ico" />
+    <link rel="icon" href="favicons/EL.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
 
     <!-- Top level styling -->
@@ -68,7 +68,7 @@
           grid-template-columns: 1fr auto 1fr; /* Three-column layout: left, middle, right */
           align-items: center;
           padding: 20px;
-          font-size: 16px;
+          font-size: 18px;
       }
       .header-left, .header-middle, .header-right {
           display: flex;
@@ -93,6 +93,7 @@
           .header-container {
               grid-template-columns: 1fr;
               padding: 20px 20px;
+              font-size: 16px;
           }
           .header-left, .header-right {
               display: none;
@@ -289,7 +290,7 @@
 
       @media (max-width: 768px) {
           .section-header {
-              font-size: 16px;
+              font-size: 18px;
           }
       }
 
@@ -440,6 +441,63 @@
           filter: grayscale(0%);
           transform: scale(1.8);
           filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+      }
+    </style>
+
+    <!-- Style the contact section -->
+    <style>
+      .contact-container {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          padding: 10px 0;
+          font-family: 'Special Elite', monospace;
+      }
+
+      .contact-detail {
+          flex: 1 1 calc(25%);
+          min-width: 240px;
+          padding: 20px 5px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+      }
+
+      .contact-detail h3 {
+          margin-top: 0;
+          margin-bottom: 12px;
+          font-size: 20px;
+          padding-bottom: 10px;
+          font-style: italic;
+      }
+
+      .contact-detail p {
+          margin: 5px 0 0 0;
+          font-size: 18px;
+          line-height: 1.0;
+      }
+
+      .contact-detail a {
+          text-decoration: none;
+          color: inherit;
+          opacity: 1.0;
+          transition: opacity 0.2s ease;
+      }
+
+      .contact-detail a:hover {
+          opacity: 0.7;
+      }
+
+      @media (max-width: 1200px) {
+          .contact-detail {
+              flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
+          }
+      }
+
+      @media (max-width: 768px) {
+          .contact-detail {
+              flex: 1 1 100%; /* Full width on small screens */
+          }
       }
     </style>
 
@@ -638,11 +696,48 @@
       </div>
     </section>
 
+    <!-- HTML for the updated contact section -->
     <section class="main-section contact" id="contact">
       <header class="section-header">
         <h2>Get in Touch</h2>
       </header>
-      <p>Professional voice actor with over 10 years of experience in commercial, narrative, and character voice work.</p>
+      <div class="contact-container">
+
+        <div class="contact-detail">
+          <h3>DPN Talent - LA</h3>
+          <a href="mailto:trish@dpntalent.com">
+            <p>Trish Ryan - Commercial</p>
+            <p>trish@dpntalent.com</p>
+          </a>
+          <br>
+          <a href="mailto:kama@dpntalent.com">
+            <p>Kama Nist - Trailer/Promo/In-Show</p>
+            <p>kama@dpntalent.com</p>
+          </a>
+        </div>
+
+        <div class="contact-detail">
+          <h3>DPN Talent - NY</h3>
+          <a href="mailto:lklausner@dpntalent.com">
+            <p>Liz Klausner - Commercial</p>
+            <p>lklausner@dpntalent.com</p>
+          </a>
+          <br>
+          <a href="mailto:mambrosia@dpntalent.com">
+            <p>Matt Ambrosia - Trailer/Promo/In-Show</p>
+            <p>mambrosia@dpntalent.com</p>
+          </a>
+        </div>
+
+        <div class="contact-detail">
+          <h3>Direct</h3>
+          <p>Elliott Lowe</p>
+          <p><a href="mailto:Elliott@LoweVoice.com">Elliott@LoweVoice.com</a></p>
+          <p>(949) 246-2426</p>
+          <p><a href="https://now.source-elements.com/#!/guest/lowevoice">Source Connect: LoweVoice</a></p>
+
+        </div>
+      </div>
     </section>
 
     <footer class="footer">
