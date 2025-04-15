@@ -6,6 +6,11 @@
     <title>Elliott Lowe Voice Talent - Professional Voiceover For Your Next Project</title>
 
     <link rel="icon" href="favicons/EL.ico" />
+
+    <link rel="preload" href="fonts/typenoksidi.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
 
     <!-- Top level styling -->
@@ -17,6 +22,7 @@
           src: url('fonts/typenoksidi.ttf') format('truetype');
           font-weight: normal;
           font-style: normal;
+          font-display: swap;
       }
 
       :root {
@@ -65,7 +71,7 @@
       }
 
       /* Container within the sticky header */
-      .header-container {
+      .header-content {
           width: 100%;
           display: grid;
           grid-template-columns: 1fr auto 1fr; /* Three-column layout: left, middle, right */
@@ -93,7 +99,7 @@
       }
 
       @media (max-width: 1000px) {
-          .header-container {
+          .header-content {
               grid-template-columns: 1fr;
               padding: 20px 20px;
               font-size: 16px;
@@ -278,7 +284,7 @@
     <!-- Style the main sections -->
     <style>
       .main-section {
-          margin: 60px auto 20px auto;
+          margin: 60px 20px 20px 20px;
       }
 
       .section-header {
@@ -299,18 +305,48 @@
 
       .about .content-container {
           display: flex;
-          align-items: center; /* Vertically center items */
-          gap: 30px; /* Space between image and text */
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 60px;
+          max-width: 900px;
+          margin: 0 auto;
       }
 
-      .about .content-container img {
-          height: 300px;
+      .about .about-image {
+          padding: 30px 0 0 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
       }
 
-      .about .content-container .text-content {
+      .about .about-image img {
+          height: auto;
+          max-height: 360px;
+          width: 100%;
+          max-width: 300px;
+          object-fit: contain;
+      }
+
+      .about .about-text {
+          padding: 0;
           flex: 1; /* Take up remaining space */
       }
 
+      .about .about-text p {
+          font-size: 20px;
+      }
+
+      @media(max-width: 768px) {
+          .about .content-container {
+              gap: 20px;
+          }
+          .about .about-image {
+              width: 100%;
+          }
+          .about-text {
+              text-align: center;
+          }
+      }
     </style>
 
     <!-- Style the demo section -->
@@ -511,8 +547,8 @@
   </head>
 
   <body>
-    <div class="sticky-header">
-      <div class="header-container">
+    <header class="sticky-header">
+      <div class="header-content">
         <div class="header-left">
           <a href="index.html" class="home-link">
             <div>Elliott Lowe Voice Talent</div>
@@ -535,16 +571,16 @@
           </a>
         </div>
       </div>
-    </div>
+    </header>
 
-    <div class="projector-container">
+    <section class="projector-container">
       <div class="screen" id="screen">
         <div class="projector-text-container">
           <div class="line1" id="line1">ELLIOTT LOWE</div>
           <div class="line2" id="line2">VOICE TALENT</div>
         </div>
       </div>
-    </div>
+    </section>
 
     <section class="main-section demos" id="demos">
       <header class="section-header">
@@ -696,8 +732,10 @@
         <h2>Who is This Guy Anyway?</h2>
       </header>
       <div class="content-container">
-        <img src="images/Headshot.jpg">
-        <div class="text-content">
+        <div class="about-image">
+          <img src="images/Headshot.jpg">
+        </div>
+        <div class="about-text">
           <p>Professional voice actor with over 10 years of experience in commercial, narrative, and character voice work.</p>
         </div>
       </div>
