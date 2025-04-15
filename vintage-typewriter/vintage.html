@@ -27,20 +27,23 @@
 
       html {
           background-color: #000;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/Texture.jpg'), url('images/Sand.jpg');
+          background-attachment: fixed;
+          background-blend-mode: overlay;
+          background-color: rgba(0, 0, 0, 0.5);
           color: #e8e3cb;
           font-family: 'Typenoksidi', 'Special Elite', monospace;
-          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Vintage-Microphone-Digital.jpg');
-          background-size: cover;
-          background-position: 50% 25%;
-          background-attachment: fixed;
-          background-blend-mode: multiply;
-          background-color: rgba(0, 0, 0, 0.7);
-          scroll-padding-top: 100px; /* a little taller than sticky header */
+          scroll-padding-top: 100px;
           scroll-behavior: smooth;
       }
 
-      .footer {
-          margin-top: 40px;
+      body {
+          margin: 0;
+      }
+
+      footer {
+          background-color: #18130b;
+          padding: 4px 0;
       }
 
       .copyright p {
@@ -51,7 +54,7 @@
       .sticky-header {
           position: sticky;
           top: 0;
-          background-color: #141414;
+          background-color: #18130b;
           width: 100%;
           z-index: 1000;
           display: flex;
@@ -402,7 +405,7 @@
       .client-carousel {
           position: relative;
           max-width: 100%;
-          height: 140px;
+          height: 145px;
       }
 
       .carousel-container {
@@ -450,28 +453,29 @@
           width: 100%;
           display: flex;
           flex-wrap: wrap;
-          padding: 10px 0;
           font-family: 'Special Elite', monospace;
+          padding-bottom: 20px;
       }
 
-      .contact-detail {
-          flex: 1 1 calc(25%);
-          min-width: 240px;
-          padding: 20px 5px;
+      .contact-group {
           display: flex;
           flex-direction: column;
           text-align: center;
+          flex: 1 1 calc(25%);
+          min-width: 400px;
       }
 
-      .contact-detail h3 {
-          margin-top: 0;
-          margin-bottom: 12px;
+      .contact-group h3 {
           font-size: 20px;
-          padding-bottom: 10px;
-          font-style: italic;
+          text-transform: uppercase;
+      }
+
+      .contact-detail {
+          margin: 10px auto 20px auto;
       }
 
       .contact-detail p {
+          white-space: nowrap;
           margin: 5px 0 0 0;
           font-size: 18px;
           line-height: 1.0;
@@ -495,6 +499,9 @@
       }
 
       @media (max-width: 768px) {
+          .contact-group {
+              padding-bottom: 20px;
+          }
           .contact-detail {
               flex: 1 1 100%; /* Full width on small screens */
           }
@@ -703,39 +710,46 @@
       </header>
       <div class="contact-container">
 
-        <div class="contact-detail">
-          <h3>DPN Talent - LA</h3>
-          <a href="mailto:trish@dpntalent.com">
-            <p>Trish Ryan - Commercial</p>
-            <p>trish@dpntalent.com</p>
-          </a>
-          <br>
-          <a href="mailto:kama@dpntalent.com">
-            <p>Kama Nist - Trailer/Promo/In-Show</p>
-            <p>kama@dpntalent.com</p>
-          </a>
+        <div class="contact-group">
+          <h3>DPN Talent / LA</h3>
+          <div class="contact-detail">
+            <a href="mailto:trish@dpntalent.com">
+              <p>Trish Ryan - Commercial</p>
+              <p>trish@dpntalent.com</p>
+            </a>
+          </div>
+          <div class="contact-detail">
+            <a href="mailto:kama@dpntalent.com">
+              <p>Kama Nist - Trailer/Promo/In-Show</p>
+              <p>kama@dpntalent.com</p>
+            </a>
+          </div>
         </div>
 
-        <div class="contact-detail">
-          <h3>DPN Talent - NY</h3>
-          <a href="mailto:lklausner@dpntalent.com">
-            <p>Liz Klausner - Commercial</p>
-            <p>lklausner@dpntalent.com</p>
-          </a>
-          <br>
-          <a href="mailto:mambrosia@dpntalent.com">
-            <p>Matt Ambrosia - Trailer/Promo/In-Show</p>
-            <p>mambrosia@dpntalent.com</p>
-          </a>
+        <div class="contact-group">
+          <h3>DPN Talent / NY</h3>
+          <div class="contact-detail">
+            <a href="mailto:lklausner@dpntalent.com">
+              <p>Liz Klausner - Commercial</p>
+              <p>lklausner@dpntalent.com</p>
+            </a>
+          </div>
+          <div class="contact-detail">
+            <a href="mailto:mambrosia@dpntalent.com">
+              <p>Matt Ambrosia - Trailer/Promo/In-Show</p>
+              <p>mambrosia@dpntalent.com</p>
+            </a>
+          </div>
         </div>
 
-        <div class="contact-detail">
+        <div class="contact-group">
           <h3>Direct</h3>
-          <p>Elliott Lowe</p>
-          <p><a href="mailto:Elliott@LoweVoice.com">Elliott@LoweVoice.com</a></p>
-          <p>(949) 246-2426</p>
-          <p><a href="https://now.source-elements.com/#!/guest/lowevoice">Source Connect: LoweVoice</a></p>
-
+          <div class="contact-detail">
+            <p>Elliott Lowe</p>
+            <p><a href="mailto:Elliott@LoweVoice.com">Elliott@LoweVoice.com</a></p>
+            <p>(949) 246-2426</p>
+            <p><a href="https://now.source-elements.com/#!/guest/lowevoice">Source Connect: LoweVoice</a></p>
+          </div>
         </div>
       </div>
     </section>
