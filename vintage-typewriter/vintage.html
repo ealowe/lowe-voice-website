@@ -103,15 +103,6 @@
           }
       }
 
-      .copyright {
-          padding: 8px;
-      }
-
-      .copyright p {
-          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi has none */
-          text-align: center;
-      }
-
       .menu a {
           color: #e8e3cb;
           text-decoration: none;
@@ -159,6 +150,15 @@
 
       .header-right .email-link:hover {
           opacity: 0.75;
+      }
+
+      .copyright {
+          padding: 8px;
+      }
+
+      .copyright p {
+          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi has none */
+          text-align: center;
       }
     </style>
 
@@ -305,37 +305,35 @@
       .bio-container {
           display: flex;
           flex-wrap: wrap;
-          align-items: center;
           gap: 60px;
+          align-items: top;
           max-width: 900px;
-          margin: 0 auto;
+          margin: auto;
       }
 
       .bio-image {
-          padding: 30px 0 0 0;
           display: flex;
           justify-content: center;
           align-items: center;
       }
 
       .bio-image img {
-          height: auto;
-          max-height: 360px;
           width: 100%;
           max-width: 300px;
-          object-fit: contain;
+          overflow: hidden;
       }
 
       .bio-text {
-          padding: 0;
+          text-align: left;
           flex: 1; /* Take up remaining space */
       }
 
       .bio-text p {
-          font-size: 20px;
+          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi has none */
+          font-size: 16px;
       }
 
-      @media(max-width: 768px) {
+      @media(max-width: 900px) {
           .bio-container {
               gap: 20px;
           }
@@ -343,7 +341,7 @@
               width: 100%;
           }
           .bio-text {
-              text-align: center;
+              padding: 24px;
           }
       }
     </style>
@@ -726,7 +724,17 @@
           <img src="images/Headshot.jpg">
         </div>
         <div class="bio-text">
-          <p>Professional voice actor with over 10 years of experience in commercial, narrative, and character voice work.</p>
+          <p>
+            Elliott burst onto the voiceover scene more than a decade ago, and since then, the voiceover scene has been……well, pretty much the same, except now Elliott’s part of it.&nbsp;&nbsp;But in that time, his booming baritone has been heard literally thousands of times on TV, radio, the Web, and plenty of other places.
+          </p>
+          <p>
+            If you were anywhere near a TV in 2015, you probably heard Elliott exhort you to “pick your sport, pick your players, and pick up your cash.”&nbsp;&nbsp;Yep, he was the voice of those unrelenting DraftKings commercials that blanketed the airwaves that summer.&nbsp;&nbsp;Please don’t hold it against him.
+          </p>
+          <p>
+            Nowadays, Elliott works out of his professional-quality home studio, equipped with SourceConnect, Zoom, phone patch, his Sennheiser 416 mic, and anything else you might need to bring your project to life.&nbsp;&nbsp;Reach out to him directly or through one of his agents to book him for your next project.
+
+
+</p>
         </div>
       </div>
     </section>
