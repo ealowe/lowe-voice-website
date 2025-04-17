@@ -47,27 +47,17 @@
           margin: 0;
       }
 
-      footer {
-          background-color: #18130b;
-          padding: 4px 0;
-      }
-
-      .copyright p {
-          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi has none */
-          text-align: center;
-      }
-
       .sticky-header {
           position: sticky;
           top: 0;
-          background-color: #18130b;
           width: 100%;
           z-index: 1000;
           display: flex;
           justify-content: center;
           align-items: center;
           box-shadow: 0 2px 4px rgba(2, 2, 2, 0.5);
-          font-family: 'Special Elite', monospace;
+          font-family: 'Special Elite', monospace; /* for at-sign since Typenosksidi has none */
+          background-color: #18130b;
       }
 
       /* Container within the sticky header */
@@ -111,6 +101,15 @@
               width: 100%;
               justify-content: center;
           }
+      }
+
+      .copyright {
+          padding: 8px;
+      }
+
+      .copyright p {
+          font-family: 'Special Elite', monospace; /* for copyright symbol since Typenoksidi has none */
+          text-align: center;
       }
 
       .menu a {
@@ -785,7 +784,7 @@
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="page-footer">
       <div class="copyright">
         <p>&copy; 2025 Elliott Lowe Voice Talent</p>
       </div>
@@ -802,7 +801,7 @@
           // Generate truly random transforms
           const applyRandomTransform = () => {
               // Generate random values for all transform properties - reduced by 25%
-              const translateY = (Math.random() * 6) - 3; // -3px to +3px (was -4px to +4px)
+              const translateY = (Math.random() * 4) - 2; // -3px to +3px (was -4px to +4px)
               const translateX = (Math.random() * 7.5) - 3.75; // -3.75px to +3.75px (was -5px to +5px)
               const skewX = (Math.random() * 2.625) - 1.3125; // -1.3125deg to +1.3125deg (was -1.75deg to +1.75deg)
               const skewY = (Math.random() * 2.1) - 1.05; // -1.05deg to +1.05deg (was -1.4deg to +1.4deg)
@@ -846,7 +845,7 @@
               // Create ghost copies
               for (let i = 0; i < numGhosts; i++) {
                   // Generate slightly larger offsets for more pronounced overlapping ghosts (increased by 25%)
-                  const offsetX = (Math.random() * 7) - 3.5; // -3.5px to +3.5px (was -2.8px to +2.8px)
+                  const offsetX = (Math.random() * 7.5) - 3.75; // -3.5px to +3.5px (was -2.8px to +2.8px)
                   const offsetY = (Math.random() * 5.5) - 2.75; // -2.625px to +2.625px (was -2.1px to +2.1px)
 
                   // Create ghost with increased opacity
@@ -1132,7 +1131,7 @@
           });
 
           // Auto-rotate carousel
-          setInterval( () => {
+          setInterval(() => {
               advanceCarousel();
           }, 2000);
 
