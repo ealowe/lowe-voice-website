@@ -342,10 +342,13 @@
       .bio-container {
           display: flex;
           flex-wrap: wrap;
-          gap: 60px;
-          align-items: top;
-          max-width: 1100px;
+          align-items: center;
+          justify-content: center;
+          gap: 80px;
+          max-width: 1200px;
           margin: 40px auto;
+          padding: 0 60px;
+          box-sizing: border-box;
       }
 
       .bio-image {
@@ -367,21 +370,19 @@
       }
 
       .bio-text p {
-          font-size: 18px;
+          font-size: 17px;
       }
 
       @media(max-width: 900px) {
           .bio-container {
+              padding: 0 20px;
               gap: 20px;
           }
           .bio-image {
               width: 100%;
           }
-          .bio-text {
-              padding: 24px;
-          }
           .bio-text p {
-              font-size: 14px;
+              font-size: 15px;
           }
       }
     </style>
@@ -517,7 +518,7 @@
           width: 100%;
           display: flex;
           flex-wrap: wrap;
-          padding-bottom: 20px;
+          padding: 0 auto 20px auto;
       }
 
       .contact-group {
@@ -531,6 +532,7 @@
       .contact-group h3 {
           font-size: 22px;
           text-transform: uppercase;
+          margin-top: 10px;
       }
 
       .contact-detail {
@@ -563,7 +565,7 @@
 
       @media (max-width: 768px) {
           .contact-group {
-              padding-bottom: 20px;
+              padding: 20px 0;
           }
           .contact-detail {
               flex: 1 1 100%; /* Full width on small screens */
@@ -805,9 +807,7 @@
           </p>
           <p>
             Nowadays, Elliott works out of his professional-quality home studio, equipped with SourceConnect, Zoom, phone patch, his Sennheiser 416 mic, and anything else you might need to bring your project to life.&nbsp;&nbsp;Reach out to him directly or through one of his agents to book him for your next project.
-
-
-</p>
+          </p>
         </div>
       </div>
     </section>
