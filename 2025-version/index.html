@@ -139,6 +139,12 @@
           }
       }
 
+      @media (max-width: 480px) {
+          .header-content {
+              font-size: 13px;
+          }
+      }
+
       .menu a {
           color: #e8e3cb;
           text-decoration: none;
@@ -188,12 +194,16 @@
           opacity: 0.75;
       }
 
-      .copyright {
+      .copyright p {
           padding: 8px;
+          text-align: center;
       }
 
-      .copyright p {
-          text-align: center;
+      @media (max-width: 768px) {
+          .copyright p {
+              font-size: 12px;
+              padding: 2px;
+          }
       }
     </style>
 
@@ -265,13 +275,22 @@
 
       @media (max-width: 768px) {
           .projector-container {
-              height: 100px;
+              height: 140px;
           }
           .line1 {
               font-size: 54px;
           }
           .line2 {
               font-size: 36px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .line1 {
+              font-size: 44px;
+          }
+          .line2 {
+              font-size: 32px;
           }
       }
 
@@ -319,7 +338,7 @@
     <!-- Style the main sections -->
     <style>
       .main-section {
-          margin: 80px 20px 20px 20px;
+          margin: 80px 10px 20px 10px;
       }
 
       .section-header {
@@ -334,8 +353,17 @@
       }
 
       @media (max-width: 768px) {
+          .main-section {
+              margin: 20px 8px;
+          }
           .section-header {
               font-size: 18px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .section-header {
+              font-size: 14px;
           }
       }
 
@@ -373,16 +401,22 @@
           font-size: 17px;
       }
 
-      @media(max-width: 900px) {
+      @media(max-width: 1000px) {
           .bio-container {
-              padding: 0 20px;
+              padding: 0 30px;
               gap: 20px;
           }
-          .bio-image {
-              width: 100%;
+          .bio-image img {
+              width: 80%;
           }
           .bio-text p {
               font-size: 15px;
+          }
+      }
+
+      @media(max-width: 480px) {
+          .bio-text p {
+              font-size: 13px;
           }
       }
     </style>
@@ -427,6 +461,16 @@
               transform: scale(0.80);
               gap: 8px;
               margin: 0;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .demo-grid {
+              grid-template-columns: min-content 300px;
+              transform: scale(0.70);
+          }
+          .demo-grid label {
+              padding-right: 8px;
           }
       }
 
@@ -562,13 +606,20 @@
               flex: 1 1 calc(50% - 20px); /* Two columns on medium screens */
           }
       }
-
       @media (max-width: 768px) {
           .contact-group {
               padding: 20px 0;
           }
           .contact-detail {
               flex: 1 1 100%; /* Full width on small screens */
+          }
+      }
+      @media (max-width: 480px) {
+          .contact-container {
+              transform: scale(80%);
+          }
+          .contact-group {
+              min-width: 300px;
           }
       }
     </style>
