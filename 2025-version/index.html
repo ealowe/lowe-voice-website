@@ -69,16 +69,11 @@
           margin: 0;
       }
 
-      h1.dont-show-this {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
+      /* Banner H1 reset so it renders exactly like the original div */
+      h1.projector-text-container {
+          margin: 0;
+          font-size: inherit;
+          font-weight: normal;
       }
 
       .sticky-header {
@@ -637,7 +632,7 @@
           "serviceType": ["Voice Over", "Voiceover", "Narration", "Commercials", "Trailers", "Political"],
           "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Newport Coast",
+              "addressLocality": "Newport Beach",
               "addressRegion": "CA",
               "addressCountry": "US"
           }
@@ -672,14 +667,12 @@
       </div>
     </header>
 
-    <h1 class="dont-show-this">Elliott Lowe Voice Talent - Professional Voiceover Services</h1>
-
     <section class="projector-container">
       <div class="screen" id="screen">
-        <div class="projector-text-container">
-          <div class="line1" id="line1">ELLIOTT LOWE</div>
-          <div class="line2" id="line2">VOICE TALENT</div>
-        </div>
+        <h1 class="projector-text-container">
+          <span class="line1" id="line1">ELLIOTT LOWE</span>
+          <span class="line2" id="line2">VOICE TALENT</span>
+        </h1>
       </div>
     </section>
 
@@ -741,51 +734,51 @@
       <div class="video-grid-container">
         <div class="video-grid-item">
           <!-- Goody's -->
-          <iframe src="https://www.youtube.com/embed/Jd0GiK4Z9gw?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Goody&apos;s commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/Jd0GiK4Z9gw?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Justice League -->
-          <iframe src="https://player.vimeo.com/video/399052483?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Justice League promo, voiced by Elliott Lowe" src="https://player.vimeo.com/video/399052483?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Draft Kings -->
-          <iframe src="https://player.vimeo.com/video/211535459?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="DraftKings national TV commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211535459?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Fendt 900 -->
-          <iframe src="https://player.vimeo.com/video/521639501?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Fendt 900 tractor commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/521639501?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Wearwell -->
-          <iframe src="https://www.youtube.com/embed/lpGuU9e8B1A?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Wearwell commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/lpGuU9e8B1A?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Amnesty Intl -->
-          <iframe src="https://player.vimeo.com/video/211430070?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Amnesty International PSA, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211430070?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Microsoft Lumia -->
-          <iframe src="https://player.vimeo.com/video/211550550?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Microsoft Lumia commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211550550?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Boise Cascade -->
-          <iframe src="https://www.youtube.com/embed/htXwwYkKyD4?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Boise Cascade commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/htXwwYkKyD4?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- PIIMS -->
-          <iframe src="https://www.youtube.com/embed/jQpT7yI7A0g?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="PIIMS video, voiced by Elliott Lowe" src="https://www.youtube.com/embed/jQpT7yI7A0g?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Soothe -->
-          <iframe src="https://player.vimeo.com/video/238151970?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Soothe commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/238151970?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- Dixie Chopper -->
-          <iframe src="https://www.youtube.com/embed/ejVOI00p_VE?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="Dixie Chopper commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/ejVOI00p_VE?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="video-grid-item">
           <!-- ScanMed -->
-          <iframe src="https://www.youtube.com/embed/7w_BLZqai7g?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe title="ScanMed video, voiced by Elliott Lowe" src="https://www.youtube.com/embed/7w_BLZqai7g?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -797,48 +790,48 @@
       <div class="client-carousel">
         <div class="carousel-container">
           <div class="carousel-track">
-            <div class="carousel-item"><img src="assets/logos/Valley.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Kia.png"></div>
-            <div class="carousel-item"><img src="assets/logos/BoiseCascade.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Bushnell.png"></div>
-            <div class="carousel-item"><img src="assets/logos/MercedesBenz.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Microsoft.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Toshiba.png"></div>
-            <div class="carousel-item"><img src="assets/logos/FBU.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Dell.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Comcast.png"></div>
-            <div class="carousel-item"><img src="assets/logos/NASA.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Delta.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Amnesty.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Kawasaki.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Wearwell.png"></div>
-            <div class="carousel-item"><img src="assets/logos/CaboWabo.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Stillhouse.png"></div>
-            <div class="carousel-item"><img src="assets/logos/DARPA.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Dickies.png"></div>
-            <div class="carousel-item"><img src="assets/logos/LASD.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Lowes.png"></div>
-            <div class="carousel-item"><img src="assets/logos/DixieChopper.png"></div>
-            <div class="carousel-item"><img src="assets/logos/DraftKings.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Fendt.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Velcro.png"></div>
-            <div class="carousel-item"><img src="assets/logos/FranklinTempleton.png"></div>
-            <div class="carousel-item"><img src="assets/logos/GolfChannel.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Stanley.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Goodys.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Hologic.png"></div>
-            <div class="carousel-item"><img src="assets/logos/HydroGear.png"></div>
-            <div class="carousel-item"><img src="assets/logos/KonaGrill.png"></div>
-            <div class="carousel-item"><img src="assets/logos/MemorialCare.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Lycoming.png"></div>
-            <div class="carousel-item"><img src="assets/logos/PennState.png"></div>
-            <div class="carousel-item"><img src="assets/logos/StaterBros.png"></div>
-            <div class="carousel-item"><img src="assets/logos/Midmark.png"></div>
-            <div class="carousel-item"><img src="assets/logos/FlatRock.png"></div>
-            <div class="carousel-item"><img src="assets/logos/FAI.png"></div>
-            <div class="carousel-item"><img src="assets/logos/AutoRemind.png"></div>
-            <div class="carousel-item"><img src="assets/logos/OCBC.png"></div>
-            <div class="carousel-item"><img src="assets/logos/CSC.png"></div>
+            <div class="carousel-item"><img src="assets/logos/Valley.png" alt="Valley logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Kia.png" alt="Kia logo"></div>
+            <div class="carousel-item"><img src="assets/logos/BoiseCascade.png" alt="Boise Cascade logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Bushnell.png" alt="Bushnell logo"></div>
+            <div class="carousel-item"><img src="assets/logos/MercedesBenz.png" alt="Mercedes-Benz logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Microsoft.png" alt="Microsoft logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Toshiba.png" alt="Toshiba logo"></div>
+            <div class="carousel-item"><img src="assets/logos/FBU.png" alt="FBU logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Dell.png" alt="Dell logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Comcast.png" alt="Comcast logo"></div>
+            <div class="carousel-item"><img src="assets/logos/NASA.png" alt="NASA logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Delta.png" alt="Delta logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Amnesty.png" alt="Amnesty International logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Kawasaki.png" alt="Kawasaki logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Wearwell.png" alt="Wearwell logo"></div>
+            <div class="carousel-item"><img src="assets/logos/CaboWabo.png" alt="Cabo Wabo logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Stillhouse.png" alt="Stillhouse logo"></div>
+            <div class="carousel-item"><img src="assets/logos/DARPA.png" alt="DARPA logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Dickies.png" alt="Dickies logo"></div>
+            <div class="carousel-item"><img src="assets/logos/LASD.png" alt="Los Angeles County Sheriff&apos;s Department logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Lowes.png" alt="Lowe&apos;s logo"></div>
+            <div class="carousel-item"><img src="assets/logos/DixieChopper.png" alt="Dixie Chopper logo"></div>
+            <div class="carousel-item"><img src="assets/logos/DraftKings.png" alt="DraftKings logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Fendt.png" alt="Fendt logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Velcro.png" alt="Velcro logo"></div>
+            <div class="carousel-item"><img src="assets/logos/FranklinTempleton.png" alt="Franklin Templeton logo"></div>
+            <div class="carousel-item"><img src="assets/logos/GolfChannel.png" alt="Golf Channel logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Stanley.png" alt="Stanley logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Goodys.png" alt="Goody&apos;s logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Hologic.png" alt="Hologic logo"></div>
+            <div class="carousel-item"><img src="assets/logos/HydroGear.png" alt="Hydro-Gear logo"></div>
+            <div class="carousel-item"><img src="assets/logos/KonaGrill.png" alt="Kona Grill logo"></div>
+            <div class="carousel-item"><img src="assets/logos/MemorialCare.png" alt="MemorialCare logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Lycoming.png" alt="Lycoming logo"></div>
+            <div class="carousel-item"><img src="assets/logos/PennState.png" alt="Penn State logo"></div>
+            <div class="carousel-item"><img src="assets/logos/StaterBros.png" alt="Stater Bros. logo"></div>
+            <div class="carousel-item"><img src="assets/logos/Midmark.png" alt="Midmark logo"></div>
+            <div class="carousel-item"><img src="assets/logos/FlatRock.png" alt="Flat Rock logo"></div>
+            <div class="carousel-item"><img src="assets/logos/FAI.png" alt="FAI logo"></div>
+            <div class="carousel-item"><img src="assets/logos/AutoRemind.png" alt="AutoRemind logo"></div>
+            <div class="carousel-item"><img src="assets/logos/OCBC.png" alt="OCBC logo"></div>
+            <div class="carousel-item"><img src="assets/logos/CSC.png" alt="CSC logo"></div>
           </div>
         </div>
       </div>
@@ -850,7 +843,7 @@
       </header>
       <div class="bio-container">
         <div class="bio-image">
-          <img src="assets/images/Headshot.jpg">
+          <img src="assets/images/Headshot.jpg" alt="Elliott Lowe, professional voice actor">
         </div>
         <div class="bio-text">
           <p>
@@ -921,7 +914,7 @@
 
     <footer class="page-footer">
       <div class="copyright">
-        <p>&copy; 2025 Elliott Lowe Voice Talent</p>
+        <p>&copy; 2026 Elliott Lowe Voice Talent</p>
       </div>
     </footer>
 
