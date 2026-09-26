@@ -504,6 +504,42 @@
           width: 100%;
           height: 100%;
       }
+      .video-facade {
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+      }
+      .video-facade img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+      }
+      .video-play {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 68px;
+          height: 48px;
+          transform: translate(-50%, -50%);
+          border: none;
+          border-radius: 12px;
+          background: rgba(0, 0, 0, 0.7);
+          cursor: pointer;
+      }
+      .video-play::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 54%;
+          transform: translate(-50%, -50%);
+          border-style: solid;
+          border-width: 11px 0 11px 19px;
+          border-color: transparent transparent transparent #fff;
+      }
+      .video-facade:hover .video-play {
+          background: rgba(0, 0, 0, 0.9);
+      }
     </style>
 
     <!-- Style the client carousel. -->
@@ -760,51 +796,87 @@
       <div class="video-grid-container">
         <div class="video-grid-item">
           <!-- Goody's -->
-          <iframe loading="lazy" title="Goody&apos;s commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/Jd0GiK4Z9gw?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/Jd0GiK4Z9gw?rel=0&amp;autoplay=1" data-title="Goody&apos;s commercial, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/Jd0GiK4Z9gw/hqdefault.jpg" alt="Goody&apos;s commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Goody&apos;s commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Justice League -->
-          <iframe loading="lazy" title="Justice League promo, voiced by Elliott Lowe" src="https://player.vimeo.com/video/399052483?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/399052483?autoplay=1&amp;dnt=1" data-title="Justice League promo, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/867069442-8e2a4656f277cfe2b0c20b7a60519baa47e95b64a8037171cf9197abff11f6f3-d_640?region=us" alt="Justice League promo, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Justice League promo"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Draft Kings -->
-          <iframe loading="lazy" title="DraftKings national TV commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211535459?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/211535459?autoplay=1&amp;dnt=1" data-title="DraftKings national TV commercial, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/627585034-4fe43caa3118d6a432d243fb8404571ce74c95250457f32da4f6b0eb9f6dd686-d_640?region=us" alt="DraftKings national TV commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play DraftKings national TV commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Fendt 900 -->
-          <iframe loading="lazy" title="Fendt 900 tractor commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/521639501?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/521639501?autoplay=1&amp;dnt=1" data-title="Fendt 900 tractor commercial, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/1080330769-3c5604493a8254b8ff08ad742572296c60c1b5a30cc3eb36f4d41a2414619c55-d_640?region=us" alt="Fendt 900 tractor commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Fendt 900 tractor commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Wearwell -->
-          <iframe loading="lazy" title="Wearwell commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/lpGuU9e8B1A?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/lpGuU9e8B1A?rel=0&amp;autoplay=1" data-title="Wearwell commercial, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/lpGuU9e8B1A/hqdefault.jpg" alt="Wearwell commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Wearwell commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Amnesty Intl -->
-          <iframe loading="lazy" title="Amnesty International PSA, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211430070?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/211430070?autoplay=1&amp;dnt=1" data-title="Amnesty International PSA, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/627455598-4b3df12036bae4b4097af86e4c24f75c9d6c87ac22a9c01021d0efeebff3c9d9-d_640?region=us" alt="Amnesty International PSA, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Amnesty International PSA"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Microsoft Lumia -->
-          <iframe loading="lazy" title="Microsoft Lumia commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/211550550?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/211550550?autoplay=1&amp;dnt=1" data-title="Microsoft Lumia commercial, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/627604749-19da00fccdb80c4146cabf9b0d563e15fdaf6cb33978c605651122744ce59b76-d_640?region=us" alt="Microsoft Lumia commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Microsoft Lumia commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Boise Cascade -->
-          <iframe loading="lazy" title="Boise Cascade commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/htXwwYkKyD4?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/htXwwYkKyD4?rel=0&amp;autoplay=1" data-title="Boise Cascade commercial, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/htXwwYkKyD4/hqdefault.jpg" alt="Boise Cascade commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Boise Cascade commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- PIIMS -->
-          <iframe loading="lazy" title="PIIMS video, voiced by Elliott Lowe" src="https://www.youtube.com/embed/jQpT7yI7A0g?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/jQpT7yI7A0g?rel=0&amp;autoplay=1" data-title="PIIMS video, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/jQpT7yI7A0g/hqdefault.jpg" alt="PIIMS video, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play PIIMS video"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Soothe -->
-          <iframe loading="lazy" title="Soothe commercial, voiced by Elliott Lowe" src="https://player.vimeo.com/video/238151970?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://player.vimeo.com/video/238151970?autoplay=1&amp;dnt=1" data-title="Soothe commercial, voiced by Elliott Lowe">
+            <img src="https://i.vimeocdn.com/video/660770800-afc7c1b1b64370f5aa7f37d4964907eef350d4f4ef71d78f2d26ec5c45104e35-d_640?region=us" alt="Soothe commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Soothe commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- Dixie Chopper -->
-          <iframe loading="lazy" title="Dixie Chopper commercial, voiced by Elliott Lowe" src="https://www.youtube.com/embed/ejVOI00p_VE?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/ejVOI00p_VE?rel=0&amp;autoplay=1" data-title="Dixie Chopper commercial, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/ejVOI00p_VE/hqdefault.jpg" alt="Dixie Chopper commercial, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play Dixie Chopper commercial"></button>
+          </div>
         </div>
         <div class="video-grid-item">
           <!-- ScanMed -->
-          <iframe loading="lazy" title="ScanMed video, voiced by Elliott Lowe" src="https://www.youtube.com/embed/7w_BLZqai7g?rel=0" frameborder="0" allowfullscreen></iframe>
+          <div class="video-facade" data-src="https://www.youtube-nocookie.com/embed/7w_BLZqai7g?rel=0&amp;autoplay=1" data-title="ScanMed video, voiced by Elliott Lowe">
+            <img src="https://i.ytimg.com/vi/7w_BLZqai7g/hqdefault.jpg" alt="ScanMed video, voiced by Elliott Lowe" loading="lazy">
+            <button class="video-play" aria-label="Play ScanMed video"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -1368,6 +1440,34 @@
           window.addEventListener('resize', adjustVideoDisplay);
       });
 
+    </script>
+
+    <!-- Load the real video player only when clicked -->
+    <script>
+      document.querySelectorAll('.video-facade').forEach(facade => {
+          facade.addEventListener('click', () => {
+              if (facade.dataset.loading) {  // ignore double clicks
+                  return;
+              }
+              facade.dataset.loading = 'true';
+
+              const iframe = document.createElement('iframe');
+              iframe.src = facade.dataset.src;
+              iframe.title = facade.dataset.title;
+              iframe.setAttribute('frameborder', '0');
+              iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+              iframe.setAttribute('allowfullscreen', '');
+              iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+              // Put player beneath thumbnail, remove thumbnail once player has loaded
+              // (keeps thumbnail displayed while video loads).
+
+              facade.before(iframe);
+              const reveal = () => facade.remove();
+              iframe.addEventListener('load', reveal, { once: true });
+              setTimeout(reveal, 5000);  // safety net if load never fires
+          });
+      });
     </script>
 
   </body>
