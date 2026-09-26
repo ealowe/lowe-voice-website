@@ -30,8 +30,21 @@
     <link rel="icon" href="assets/favicons/EL.ico" />
 
     <link rel="preload" href="assets/fonts/typenoksidi.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<!--
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+-->
+
+    <!-- Open connections to Google Fonts early -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load font CSS without blocking first paint -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+          media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"></noscript>
+<!-- -->
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css">
 
