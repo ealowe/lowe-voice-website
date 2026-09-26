@@ -621,21 +621,45 @@
     <script type="application/ld+json">
       {
           "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          "name": "Elliott Lowe Voice Talent",
-          "url": "https://lowevoice.com",
-          "image": "https://lowevoice.com/assets/images/Headshot.jpg",
-          "description": "Professional voice talent specializing in commercials, trailers, promos, and in-show narration.",
-          "telephone": "+1 (949) 246-2426",
-          "email": "Elliott@LoweVoice.com",
-          "priceRange": "$$",
-          "serviceType": ["Voice Over", "Voiceover", "Narration", "Commercials", "Trailers", "Political"],
-          "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Newport Beach",
-              "addressRegion": "CA",
-              "addressCountry": "US"
-          }
+          "@graph": [
+              {
+                  "@type": "Person",
+                  "@id": "https://lowevoice.com/#elliott",
+                  "name": "Elliott Lowe",
+                  "jobTitle": "Voice Actor",
+                  "url": "https://lowevoice.com",
+                  "image": "https://lowevoice.com/assets/images/Headshot.jpg",
+                  "description": "Newport Beach voice actor known for national commercials including DraftKings, specializing in political, trailer, promo, and in-show narration voiceover.",
+                  "knowsAbout": ["Voice Over", "Political Voice Over", "Movie Trailer Voice Over", "Documentary Narration", "In-Show Narration", "Commercial Voice Over", "Promos"],
+                  "award": "SOVAS Award Nominee, Outstanding Narration Demo Reel, Best Voiceover (2017)",
+                  "worksFor": { "@id": "https://lowevoice.com/#business" },
+                  "sameAs": [
+                      "https://voice123.com/voice-actor/elliottlowe",
+                      "https://dpntalent.com/talent/elliott-lowe/",
+                      "https://www.linkedin.com/in/lowevoice"
+                  ]
+              },
+              {
+                  "@type": "ProfessionalService",
+                  "@id": "https://lowevoice.com/#business",
+                  "name": "Elliott Lowe Voice Talent",
+                  "url": "https://lowevoice.com",
+                  "image": "https://lowevoice.com/assets/images/Headshot.jpg",
+                  "description": "Professional voice talent specializing in commercials, trailers, promos, political, and in-show narration.",
+                  "founder": { "@id": "https://lowevoice.com/#elliott" },
+                  "telephone": "+1-949-246-2426",
+                  "email": "Elliott@LoweVoice.com",
+                  "priceRange": "$$",
+                  "serviceType": ["Voice Over", "Narration", "Commercials", "Trailers", "Political", "Promos"],
+                  "areaServed": "Worldwide",
+                  "address": {
+                      "@type": "PostalAddress",
+                      "addressLocality": "Newport Beach",
+                      "addressRegion": "CA",
+                      "addressCountry": "US"
+                  }
+              }
+          ]
       }
     </script>
   </head>
