@@ -1,3 +1,6 @@
+# Use 2025-version as the root
+DirectoryIndex /2025-version/index.html
+
 # Redirect asset requests to the 2025-version directory
 RewriteEngine On
 
