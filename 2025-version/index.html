@@ -833,8 +833,9 @@
         <h2>Featured Work</h2>
       </header>
 
-      <!-- Populated by buildVideoTable() in the JS script below -->
+      <!-- Populated by the VIDEOS table in the video grid script near the end of the page -->
       <div class="video-grid-container" id="video-grid"></div>
+
     </section>
 
     <section class="main-section" id="clients">
@@ -1329,74 +1330,39 @@
 
     <!-- JavaScript to control video grid items based on window width. -->
     <script>
+      // Build the video grid from a static table (called after the DOM loads).
       // To add, remove, or reorder videos, edit this table only.
       //   label:    text shown over the thumbnail (also used for alt text and the player title)
-      //   id:       the video ID from the YouTube or Vimeo URL
       //   platform: 'youtube' or 'vimeo'
+      //   id:       the video ID from the YouTube or Vimeo URL
       //   thumb:    thumbnail URL (required for Vimeo; optional for YouTube, which is derived from the ID)
       const VIDEOS = [
-          {   label: "TV Spot - Goody's Powder",
-              id: 'Jd0GiK4Z9gw',
-              platform: 'youtube'
-          },
-          {   label: 'TV Spot - Justice League',
-              id: '399052483',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/867069442-8e2a4656f277cfe2b0c20b7a60519baa47e95b64a8037171cf9197abff11f6f3-d_640?region=us',
-          },
-          {   label: 'TV Spot - DraftKings',
-              id: '211535459',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/627585034-4fe43caa3118d6a432d243fb8404571ce74c95250457f32da4f6b0eb9f6dd686-d_640?region=us',
-          },
-          {   label: 'Industrial - Dixie Chopper',
-              id: 'ejVOI00p_VE',
-              platform: 'youtube',
-          },
-          {   label: 'TV Spot - Fendt 900',
-              id: '521639501',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/1080330769-3c5604493a8254b8ff08ad742572296c60c1b5a30cc3eb36f4d41a2414619c55-d_640?region=us',
-          },
-          {   label: 'Industrial - Wearwell Diamond Plate',
-              id: 'lpGuU9e8B1A',
-              platform: 'youtube',
-          },
-          {   label: 'PSA - Amnesty International',
-              id: '211430070',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/627455598-4b3df12036bae4b4097af86e4c24f75c9d6c87ac22a9c01021d0efeebff3c9d9-d_640?region=us',
-          },
-          {   label: 'Web Video - Microsoft Lumia',
-              id: '211550550',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/627604749-19da00fccdb80c4146cabf9b0d563e15fdaf6cb33978c605651122744ce59b76-d_640?region=us',
-          },
-          {   label: 'Web Video - Boise Cascade',
-              id: 'htXwwYkKyD4',
-              platform: 'youtube',
-          },
-          {   label: 'Web Video - PIIMS Inventory Management',
-              id: 'jQpT7yI7A0g',
-              platform: 'youtube',
-          },
-          {   label: 'TV Spot - Soothe',
-              id: '238151970',
-              platform: 'vimeo',
-              thumb: 'https://i.vimeocdn.com/video/660770800-afc7c1b1b64370f5aa7f37d4964907eef350d4f4ef71d78f2d26ec5c45104e35-d_640?region=us',
-          },
-          {   label: 'Web Video - ScanMed',
-              id: '7w_BLZqai7g',
-              platform: 'youtube',
-          },
+          { label: "Goody's Powder TV Spot",    platform: 'youtube', id: 'Jd0GiK4Z9gw' },
+          { label: 'Justice League Promo',      platform: 'vimeo',   id: '399052483',
+            thumb: 'https://i.vimeocdn.com/video/867069442-8e2a4656f277cfe2b0c20b7a60519baa47e95b64a8037171cf9197abff11f6f3-d_640?region=us' },
+          { label: 'DraftKings National TV Spot', platform: 'vimeo', id: '211535459',
+            thumb: 'https://i.vimeocdn.com/video/627585034-4fe43caa3118d6a432d243fb8404571ce74c95250457f32da4f6b0eb9f6dd686-d_640?region=us' },
+          { label: 'Fendt 900 Tractor TV Spot', platform: 'vimeo',   id: '521639501',
+            thumb: 'https://i.vimeocdn.com/video/1080330769-3c5604493a8254b8ff08ad742572296c60c1b5a30cc3eb36f4d41a2414619c55-d_640?region=us' },
+          { label: 'Wearwell Commercial',       platform: 'youtube', id: 'lpGuU9e8B1A' },
+          { label: 'Amnesty International PSA', platform: 'vimeo',   id: '211430070',
+            thumb: 'https://i.vimeocdn.com/video/627455598-4b3df12036bae4b4097af86e4c24f75c9d6c87ac22a9c01021d0efeebff3c9d9-d_640?region=us' },
+          { label: 'Microsoft Lumia TV Spot',   platform: 'vimeo',   id: '211550550',
+            thumb: 'https://i.vimeocdn.com/video/627604749-19da00fccdb80c4146cabf9b0d563e15fdaf6cb33978c605651122744ce59b76-d_640?region=us' },
+          { label: 'Boise Cascade Commercial',  platform: 'youtube', id: 'htXwwYkKyD4' },
+          { label: 'PIIMS Video',               platform: 'youtube', id: 'jQpT7yI7A0g' },
+          { label: 'Soothe Commercial',         platform: 'vimeo',   id: '238151970',
+            thumb: 'https://i.vimeocdn.com/video/660770800-afc7c1b1b64370f5aa7f37d4964907eef350d4f4ef71d78f2d26ec5c45104e35-d_640?region=us' },
+          { label: 'Dixie Chopper Commercial',  platform: 'youtube', id: 'ejVOI00p_VE' },
+          { label: 'ScanMed Video',             platform: 'youtube', id: '7w_BLZqai7g' },
       ];
 
       function buildVideoGrid() {
           const grid = document.getElementById('video-grid');
 
           const embedUrl = (v) => v.platform === 'vimeo'
-                ? `https://player.vimeo.com/video/${v.id}?autoplay=1&dnt=1`
-                : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&autoplay=1`;
+              ? `https://player.vimeo.com/video/${v.id}?autoplay=1&dnt=1`
+              : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&autoplay=1`;
 
           const thumbUrl = (v) => v.thumb || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
 
@@ -1498,34 +1464,32 @@
 
     <!-- Load the real video player only when clicked -->
     <script>
-      document.querySelectorAll('.video-facade').forEach(facade => {
-          facade.addEventListener('click', () => {
-              if (facade.dataset.loading) {  // ignore double clicks
-                  return;
-              }
-              facade.dataset.loading = 'true';
+      // One listener on the document catches clicks on any thumbnail, so it
+      // works no matter when the grid is built.
+      document.addEventListener('click', (event) => {
+          const facade = event.target.closest('.video-facade');
+          if (!facade || facade.dataset.loading) {  // not a thumbnail, or a double click
+              return;
+          }
+          facade.dataset.loading = 'true';
 
-              const iframe = document.createElement('iframe');
-              iframe.src = facade.dataset.src;
-              iframe.title = facade.dataset.title;
-              iframe.setAttribute('frameborder', '0');
-              iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
-              iframe.setAttribute('allowfullscreen', '');
-              iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+          const iframe = document.createElement('iframe');
+          iframe.src = facade.dataset.src;
+          iframe.title = facade.dataset.title;
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
 
-              // Put player beneath thumbnail, remove thumbnail once player has loaded
-              // (keeps thumbnail displayed while video loads).
+          // Put player beneath thumbnail, remove thumbnail once player has loaded
+          // (keeps thumbnail displayed while video loads).
 
-              facade.before(iframe);
-              const reveal = () => facade.remove();
-              iframe.addEventListener('load', reveal, { once: true });
-              setTimeout(reveal, 5000);  // safety net if load never fires
-          });
+          facade.before(iframe);
+          const reveal = () => facade.remove();
+          iframe.addEventListener('load', reveal, { once: true });
+          setTimeout(reveal, 5000);  // safety net if load never fires
       });
     </script>
 
-    <!-- Build the video grid from a static table -->
-    <script>
-    </script>
   </body>
 </html>
