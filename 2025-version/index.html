@@ -1330,33 +1330,43 @@
 
     <!-- JavaScript to control video grid items based on window width. -->
     <script>
-      // Build the video grid from a static table (called after the DOM loads).
-      // To add, remove, or reorder videos, edit this table only.
-      //   label:    text shown over the thumbnail (also used for alt text and the player title)
-      //   platform: 'youtube' or 'vimeo'
-      //   id:       the video ID from the YouTube or Vimeo URL
-      //   thumb:    thumbnail URL (required for Vimeo; optional for YouTube, which is derived from the ID)
+      /* Build the video grid from this static table.
+         - label:    text shown over the thumbnail (also used for alt text and the player title)
+         - platform: 'youtube' or 'vimeo'
+         - id:       the video ID from the YouTube or Vimeo URL
+         - thumb:    thumbnail URL (required for Vimeo; optional for YouTube, which is derived from the ID)
+      */
       const VIDEOS = [
-          { label: "Goody's Powder TV Spot",    platform: 'youtube', id: 'Jd0GiK4Z9gw' },
-          { label: 'Justice League Promo',      platform: 'vimeo',   id: '399052483',
+          { label: "TV Spot - Goody's Powder",          platform: 'youtube', id: 'Jd0GiK4Z9gw' },
+          { label: 'TV Spot - Justice League',          platform: 'vimeo',   id: '399052483',
             thumb: 'https://i.vimeocdn.com/video/867069442-8e2a4656f277cfe2b0c20b7a60519baa47e95b64a8037171cf9197abff11f6f3-d_640?region=us' },
-          { label: 'DraftKings National TV Spot', platform: 'vimeo', id: '211535459',
+          { label: 'TV Spot - DraftKings',              platform: 'vimeo', id: '211535459',
             thumb: 'https://i.vimeocdn.com/video/627585034-4fe43caa3118d6a432d243fb8404571ce74c95250457f32da4f6b0eb9f6dd686-d_640?region=us' },
-          { label: 'Fendt 900 Tractor TV Spot', platform: 'vimeo',   id: '521639501',
+          { label: 'Industrial - Wearwell',             platform: 'youtube', id: 'lpGuU9e8B1A' },
+          { label: 'Industrial - Dixie Chopper',        platform: 'youtube', id: 'ejVOI00p_VE' },
+          { label: 'TV Spot - Fendt 900 Tractor',       platform: 'vimeo',   id: '521639501',
             thumb: 'https://i.vimeocdn.com/video/1080330769-3c5604493a8254b8ff08ad742572296c60c1b5a30cc3eb36f4d41a2414619c55-d_640?region=us' },
-          { label: 'Wearwell Commercial',       platform: 'youtube', id: 'lpGuU9e8B1A' },
-          { label: 'Amnesty International PSA', platform: 'vimeo',   id: '211430070',
+          { label: 'PSA - Amnesty International',       platform: 'vimeo',   id: '211430070',
             thumb: 'https://i.vimeocdn.com/video/627455598-4b3df12036bae4b4097af86e4c24f75c9d6c87ac22a9c01021d0efeebff3c9d9-d_640?region=us' },
-          { label: 'Microsoft Lumia TV Spot',   platform: 'vimeo',   id: '211550550',
+          { label: 'Web Video - Microsoft Lumia',       platform: 'vimeo',   id: '211550550',
             thumb: 'https://i.vimeocdn.com/video/627604749-19da00fccdb80c4146cabf9b0d563e15fdaf6cb33978c605651122744ce59b76-d_640?region=us' },
-          { label: 'Boise Cascade Commercial',  platform: 'youtube', id: 'htXwwYkKyD4' },
-          { label: 'PIIMS Video',               platform: 'youtube', id: 'jQpT7yI7A0g' },
-          { label: 'Soothe Commercial',         platform: 'vimeo',   id: '238151970',
+          { label: 'TV Spot - American Metal',          platform: 'youtube', id: 'DEAvcrRxYWI' },
+          { label: 'Web Video - Boise Cascade',         platform: 'youtube', id: 'htXwwYkKyD4' },
+          { label: 'Industrial - PIIMS',                platform: 'youtube', id: 'jQpT7yI7A0g' },
+          { label: 'TV Spot - Soothe',                  platform: 'vimeo',   id: '238151970',
             thumb: 'https://i.vimeocdn.com/video/660770800-afc7c1b1b64370f5aa7f37d4964907eef350d4f4ef71d78f2d26ec5c45104e35-d_640?region=us' },
-          { label: 'Dixie Chopper Commercial',  platform: 'youtube', id: 'ejVOI00p_VE' },
-          { label: 'ScanMed Video',             platform: 'youtube', id: '7w_BLZqai7g' },
+          { label: 'Web Video - Caborita',              platform: 'youtube', id: 'XO3XpiSA_7c' },
+          { label: 'Web Video - ScanMed',               platform: 'youtube', id: '7w_BLZqai7g' },
+          { label: 'TV Spot - Hunt A Killer',           platform: 'vimeo',   id: '263860162',
+            thumb: 'https://i.vimeocdn.com/video/693493706-859085b2b722a265ed84448145698aa0fa7ae34a9b7b21ce858e05aa1017cf71-d_640?region=us' },
+          { label: 'Industrial - Gregory Industries',   platform: 'youtube', id: 'FKPJ442rUcw' },
+          { label: 'PSA - Just Plain Killers',          platform: 'youtube', id: 'REaq9gCvD7I' },
+          { label: 'Industrial - Petro Canada',         platform: 'youtube', id: 'Dl_-yY76gZg' },
+          { label: 'Industrial - Campbell Scientific',  platform: 'youtube', id: 'SIg68d5VbXc' },
+          { label: 'Web Video - Helios Core',           platform: 'youtube', id: 'gqHzBA3xcMU' },
       ];
 
+      // Builds the video grid (called after DOM has loaded).
       function buildVideoGrid() {
           const grid = document.getElementById('video-grid');
 
@@ -1426,7 +1436,7 @@
                   };
               } else if (windowWidth < WIDE) {
                   return {
-                      visibleItems: allVideoItems.length,
+                      visibleItems: 15,
                       itemWidthPct: 33.3333333,
                       gap: 10,
                   };
