@@ -1236,7 +1236,24 @@
                   'download'
               ]
           });
+
+          // Keep download buttons from opening a new tab
+          players.forEach(player => player.on('ready', () => {
+              player.elements.container
+                  .querySelectorAll('[data-plyr="download"]')
+                  .forEach(link => link.removeAttribute('target'));
+          }));
       });
+
+      document.addEventListener('click', (event) => {
+          const link = event.target.closest('[data-plyr="download"]');
+          if (!link) {
+              return;
+          }
+          event.preventDefault();
+          event.stopPropagation();
+          window.location.href = link.href;
+      }, true);
     </script>
 
     <!-- JavaScript for the client carousel -->
