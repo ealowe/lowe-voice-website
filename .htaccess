@@ -4,6 +4,10 @@ DirectoryIndex /2025-version/index.html
 # Redirect asset requests to the 2025-version directory
 RewriteEngine On
   
+# Send www visitors to the main address (lowevoice.com)
+RewriteCond %{HTTP_HOST} ^www\.lowevoice\.com$ [NC]
+RewriteRule ^(.*)$ https://lowevoice.com/$1 [R=301,L]
+
 # Only process requests for assets that don't exist in the root
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
