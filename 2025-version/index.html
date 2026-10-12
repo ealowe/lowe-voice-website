@@ -1388,8 +1388,8 @@
           const grid = document.getElementById('video-grid');
 
           const embedUrl = (v) => v.platform === 'vimeo'
-              ? `https://player.vimeo.com/video/${v.id}?autoplay=1&dnt=1`
-              : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0&autoplay=1`;
+              ? `https://player.vimeo.com/video/${v.id}?dnt=1`
+              : `https://www.youtube-nocookie.com/embed/${v.id}?rel=0`;
 
           const thumbUrl = (v) => v.thumb || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`;
 
@@ -1489,19 +1489,23 @@
 
     </script>
 
-    <!-- Load the real video player only when clicked -->
+    <!-- Load the real video player: on click (desktop) or as it nears the screen (phones/tablets) -->
     <script>
-      // One listener on the document catches clicks on any thumbnail, so it
-      // works no matter when the grid is built.
-      document.addEventListener('click', (event) => {
-          const facade = event.target.closest('.video-facade');
-          if (!facade || facade.dataset.loading) {  // not a thumbnail, or a double click
+      // Phones and tablets only allow sound when the tap lands inside the player itself.
+      // So on touch devices the real player is loaded ahead of time, as it scrolls near
+      // the screen, and the visitor's first tap goes straight to it. Desktop keeps the
+      // fast click-to-load thumbnails.
+      const IS_TOUCH = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+      // Replace a thumbnail with the real player.
+      function loadPlayer(facade, autoplay) {
+          if (facade.dataset.loading) {  // already loading (e.g. double click)
               return;
           }
           facade.dataset.loading = 'true';
 
           const iframe = document.createElement('iframe');
-          iframe.src = facade.dataset.src;
+          iframe.src = facade.dataset.src + (autoplay ? '&autoplay=1' : '');
           iframe.title = facade.dataset.title;
           iframe.setAttribute('frameborder', '0');
           iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
@@ -1510,12 +1514,36 @@
 
           // Put player beneath thumbnail, remove thumbnail once player has loaded
           // (keeps thumbnail displayed while video loads).
-
           facade.before(iframe);
           const reveal = () => facade.remove();
           iframe.addEventListener('load', reveal, { once: true });
           setTimeout(reveal, 5000);  // safety net if load never fires
+      }
+
+      // Desktop: one listener on the document catches clicks on any thumbnail.
+      document.addEventListener('click', (event) => {
+          const facade = event.target.closest('.video-facade');
+          if (facade) {
+              loadPlayer(facade, !IS_TOUCH);
+          }
       });
+
+      // Touch devices: load each visible player as it nears the screen. Videos hidden
+      // on small screens never come into view, so they never load.
+      if (IS_TOUCH) {
+          document.addEventListener('DOMContentLoaded', function() {
+              const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          observer.unobserve(entry.target);
+                          loadPlayer(entry.target, false);
+                      }
+                  });
+              }, { rootMargin: '300px 0px' });
+
+              document.querySelectorAll('.video-facade').forEach(facade => observer.observe(facade));
+          });
+      }
     </script>
 
   </body>
