@@ -3,13 +3,16 @@ DirectoryIndex /2025-version/index.html
 
 # Redirect asset requests to the 2025-version directory
 RewriteEngine On
-
+  
 # Only process requests for assets that don't exist in the root
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # Redirect those asset requests to the 2025-version directory
 RewriteRule ^assets/(.*)$ /2025-version/assets/$1 [L]
+
+# Clean up broken links to index.html
+RewriteRule ^index\.html$ / [R=301,L]
 
 # Long cache lifetimes for static assets
 AddType font/woff2 .woff2
